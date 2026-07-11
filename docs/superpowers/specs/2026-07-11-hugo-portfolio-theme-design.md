@@ -16,12 +16,12 @@ home page, `projects-pages.html` = projects list + detail).
 
 ```
 lorainemg.github.io/
-├── hugo.toml                  site config; params: social links, CV path
+├── hugo.toml                  site config; params: social links, CV path; skills taxonomy
 ├── content/
-│   └── projects/              one .md per project (21 at migration)
+│   ├── projects/              one .md per project (21 at migration)
+│   └── experience/            one .md per role (6 at migration)
 ├── data/
-│   ├── experience.yaml        roles: company, title, location, dates, bullets, tech
-│   ├── skills.yaml            grouped skill chips
+│   ├── skills.yaml            skill display groups/order for the home chips
 │   ├── education.yaml         degree, certs, publications
 │   └── achievements.yaml      awards list
 ├── assets/                    CV PDF, images
@@ -45,12 +45,14 @@ Sections in order:
 2. **Hero** — eyebrow, display headline (one word carries the indigo→violet
    gradient), short bio, two CTAs (View projects / Get in touch), and the
    **signature career-journey graphic**: an animated dashed SVG path with
-   waypoints generated from `data/experience.yaml` (place + org per waypoint).
-   Generic journey motif — no flight/employer branding.
+   waypoints generated from the `content/experience/` pages (place + org per
+   waypoint). Generic journey motif — no flight/employer branding.
 3. **Stat bar** — years of experience, project count, publications, contest result.
-4. **Experience** — vertical timeline, all roles from `experience.yaml`.
+4. **Experience** — vertical timeline, all roles from `content/experience/`
+   (ordered by end date, current roles first).
 5. **Featured projects** — cards for projects with `featured: true` (~3–6).
-6. **Skills** — chip grid from `skills.yaml`.
+6. **Skills** — chip grid; groups/order from `skills.yaml`, each chip links to
+   its `/skills/<skill>/` page.
 7. **Education & achievements** — compact rows from their data files.
 8. **Footer** — copyright + contact/social links from site params.
 
@@ -67,13 +69,22 @@ result, stack, links), prev/next navigation. A project file with front matter
 only (no body) renders as a card that links directly to its GitHub URL —
 no detail page.
 
+### Skills taxonomy (skills ↔ roles ↔ projects)
+
+`skills` is a Hugo taxonomy shared by the `projects` and `experience`
+sections. Every skill used anywhere gets an auto-generated term page at
+`/skills/<skill>/` listing the roles and projects that used it (grouped:
+"Experience" then "Projects"). Home skill chips link to these pages; project
+cards render their skills as tags that link there too. Adding a skill anywhere
+is just adding a string to a front-matter list — pages appear automatically.
+
 ### Project front matter
 
 ```yaml
 title: eHealth-KD Challenge 2021
 description: NER and Relation Extraction with ML — 5th place at IberLEF 2021.
-category: ml-nlp          # ml-nlp | web-data | systems | research
-tags: [Python, spaCy, Scikit-Learn]
+category: ml-nlp          # drives the /projects/ filter chips (any value works)
+skills: [Python, spaCy, Scikit-Learn]
 github: https://github.com/lorainemg/ehealthkd
 links:                    # optional extra links for detail sidebar
   - name: Workshop paper
@@ -81,6 +92,22 @@ links:                    # optional extra links for detail sidebar
 featured: true            # appears on home
 weight: 1                 # ordering
 ```
+
+### Experience front matter (body = responsibility bullets, Markdown)
+
+```yaml
+title: Senior Full Stack Developer
+company: Jack's Flight Club
+location: Tampa, Florida (remote)
+website: https://jacksflightclub.com
+startDate: 2024-09-01
+endDate: null             # null = present
+skills: [Python, TypeScript, Docker, FastAPI]
+```
+
+Experience pages exist for the taxonomy and timeline; they render on the home
+timeline and skill pages but get no standalone detail pages (`build:
+render: never`-style config or simply no single template link).
 
 ## Visual system
 
@@ -140,10 +167,11 @@ also be stale. Migrate the crawled content as placeholder, structured so the
 fix is a pure `data/experience.yaml` edit she'll make later. The journey
 graphic and stat bar derive from data files, so they self-correct.
 
+**Contact links (confirmed):** github.com/lorainemg ·
+linkedin.com/in/lorainemg · lorainemonteagudo@gmail.com
+
 **Pending inputs from Loraine (content, not design):**
 - Current role details + end dates for stale roles (she'll provide later).
-- Contact/social links beyond github.com/lorainemg (footer renders only the
-  links present in params, so missing ones simply don't appear).
 - CV PDF for the Download CV button (button hidden until the file exists).
 
 ## Testing / verification
