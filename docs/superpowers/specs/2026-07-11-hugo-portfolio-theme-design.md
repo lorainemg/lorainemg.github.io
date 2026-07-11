@@ -22,7 +22,7 @@ lorainemg.github.io/
 │   └── experience/            one .md per role (6 at migration)
 ├── data/
 │   ├── skills.yaml            skill display groups/order for the home chips
-│   ├── education.yaml         degree, certs, publications
+│   ├── education.yaml         degree, certifications (several), publications
 │   └── achievements.yaml      awards list
 ├── assets/                    CV PDF, images
 ├── docs/superpowers/specs/    design docs (this file)
@@ -53,7 +53,13 @@ Sections in order:
 5. **Featured projects** — cards for projects with `featured: true` (~3–6).
 6. **Skills** — chip grid; groups/order from `skills.yaml`, each chip links to
    its `/skills/<skill>/` page.
-7. **Education & achievements** — compact rows from their data files.
+7. **Education & achievements** — from their data files, three sub-blocks in
+   the education column: **degree** (institution, years, GPA), **certifications**
+   (name, issuer, year, optional credential link — several online-course certs
+   expected), **publications** (title, venue). Achievements render alongside as
+   a compact award list (title, event, year, optional link). Same card/row
+   styling as the rest of the page — JetBrains Mono for years/labels, no new
+   visual elements.
 8. **Footer** — copyright + contact/social links from site params.
 
 ### /projects/
