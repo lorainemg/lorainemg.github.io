@@ -1,0 +1,13 @@
+# Hugo build output
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Node (Tailwind toolchain)
+node_modules/
+
+# Brainstorming companion sessions
+.superpowers/
+
+# OS / editor
+.DS_Store
