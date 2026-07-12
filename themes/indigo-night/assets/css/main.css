@@ -57,3 +57,10 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
 .journey-path { animation:journey-dash 30s linear infinite; }
 @keyframes journey-dash { to { stroke-dashoffset:-520; } }
 @media (max-width:768px) { .journey { display:none; } }
+
+.prose-indigo { color:var(--text); line-height:1.85; max-width:68ch; }
+.prose-indigo h2 { font-family:var(--font-display); color:var(--heading); font-size:1.375rem; margin:2rem 0 .875rem; }
+.prose-indigo p { margin-bottom:1rem; color:var(--muted); }
+.prose-indigo strong { color:var(--text); }
+.prose-indigo code { font-family:var(--font-mono); font-size:.8125rem; background:var(--surface); border:1px solid var(--border); padding:.125rem .4375rem; border-radius:5px; color:var(--accent); }
+.prose-indigo a { color:var(--accent); }
