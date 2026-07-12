@@ -8,8 +8,8 @@
   <p class="eyebrow mt-6 mb-3">{{ upper .group }}</p>
   <div class="flex gap-2.5 flex-wrap">
     {{ range .items }}
-      {{ with site.GetPage (printf "/skills/%s" (. | urlize)) }}
-        <a class="chip" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ with index site.Taxonomies.skills (lower .) }}
+        <a class="chip" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
       {{ else }}
         <span class="chip" style="opacity:.6">{{ . }}</span>
       {{ end }}
