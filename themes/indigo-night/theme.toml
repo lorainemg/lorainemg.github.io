@@ -1,0 +1,4 @@
+name = "Indigo Night"
+license = "MIT"
+description = "Dark indigo editor-theme portfolio for developers. Skills taxonomy links roles and projects."
+min_version = "0.148.0"

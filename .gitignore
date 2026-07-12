@@ -11,3 +11,5 @@ node_modules/
 
 # OS / editor
 .DS_Store
+
+hugo_stats.json
