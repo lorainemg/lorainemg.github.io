@@ -7,6 +7,8 @@ github: https://github.com/lorainemg/eHealthKD-competition
 links:
   - name: Paper (PDF)
     url: https://github.com/lorainemg/eHealthKD-competition/blob/main/docs/ehealth_paper4.pdf
+  - name: Task site
+    url: https://ehealthkd.github.io/2021
 featured: true
 weight: 1
 ---
