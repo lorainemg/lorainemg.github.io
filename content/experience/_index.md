@@ -2,5 +2,7 @@
 title: Experience
 cascade:
   build:
-    render: never
+    render: link
+  sitemap:
+    disable: true
 ---
