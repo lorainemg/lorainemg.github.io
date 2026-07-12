@@ -3,7 +3,7 @@
 <title>{{ if .IsHome }}{{ site.Title }} — {{ site.Params.tagline }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
 <meta name="description" content="{{ .Description | default site.Params.tagline }}">
 <script>
-  (function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t);})();
+  (function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t);document.documentElement.classList.add("js");})();
 </script>
 {{ with resources.Get "css/main.css" }}
   {{ $opts := dict "minify" (not hugo.IsDevelopment) }}

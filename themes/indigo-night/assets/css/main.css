@@ -31,9 +31,9 @@ html[data-theme="light"] {
 body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
 ::selection { background:var(--accent); color:var(--bg); }
 
-.reveal { opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
-.reveal.revealed { opacity:1; transform:none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; } }
+.js .reveal { opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
+.js .reveal.revealed { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity:1; transform:none; } }
 
 @layer components {
   .wrap { @apply max-w-[1080px] mx-auto px-8; }
