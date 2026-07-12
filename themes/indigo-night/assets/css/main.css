@@ -58,9 +58,11 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
 }
 
 .journey-label { fill:var(--muted); font-family:var(--font-mono); font-size:10.5px; }
-.journey-path { animation:journey-dash 30s linear infinite; }
-@keyframes journey-dash { to { stroke-dashoffset:-520; } }
-@media (max-width:768px) { .journey { display:none; } }
+.journey-hash { fill:var(--accent); font-family:var(--font-mono); font-size:10.5px; opacity:.75; }
+.journey-date { fill:var(--muted); font-family:var(--font-mono); font-size:9.5px; opacity:.7; }
+.journey-head { animation:journey-pulse 2.4s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+@keyframes journey-pulse { 0%,100% { opacity:.9; transform:scale(1); } 50% { opacity:.2; transform:scale(1.4); } }
+@media (max-width:1023px) { .journey { display:none; } }
 
 .prose-indigo { color:var(--text); line-height:1.85; max-width:68ch; }
 .prose-indigo h2 { font-family:var(--font-display); color:var(--heading); font-size:1.375rem; margin:2rem 0 .875rem; }
