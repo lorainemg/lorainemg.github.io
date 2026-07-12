@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ site.Language.LanguageCode }}" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ if .IsHome }}{{ site.Title }} — {{ site.Params.tagline }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  {{ partial "head.html" . }}
 </head>
 <body>
   {{ block "main" . }}{{ end }}
