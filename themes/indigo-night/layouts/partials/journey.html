@@ -1,0 +1,24 @@
+{{ $roles := sort (where site.RegularPages "Section" "experience") "Params.startDate" "asc" }}
+{{ $companies := slice }}{{ $seen := dict }}
+{{ range $roles }}{{ if not (index $seen .Params.company) }}{{ $seen = merge $seen (dict .Params.company true) }}{{ $companies = $companies | append . }}{{ end }}{{ end }}
+{{ $n := len $companies }}
+{{ if gt $n 1 }}
+<svg class="journey absolute right-[-40px] top-10 pointer-events-none" width="520" height="300" viewBox="0 0 520 300" aria-hidden="true">
+  <defs><linearGradient id="grad" x1="0" y1="1" x2="1" y2="0">
+    <stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#bb9af7"/>
+  </linearGradient></defs>
+  {{ $pts := slice }}
+  {{ range $i, $p := $companies }}
+    {{ $x := add 20 (div (mul $i 480) (sub $n 1)) }}
+    {{ $y := sub 270 (div (mul $i 240) (sub $n 1)) }}
+    {{ $pts = $pts | append (printf "%d,%d" $x $y) }}
+  {{ end }}
+  <polyline class="journey-path" points="{{ delimit $pts " " }}" fill="none" stroke="url(#grad)" stroke-width="2" stroke-dasharray="6 7"/>
+  {{ range $i, $p := $companies }}
+    {{ $x := add 20 (div (mul $i 480) (sub $n 1)) }}
+    {{ $y := sub 270 (div (mul $i 240) (sub $n 1)) }}
+    <circle cx="{{ $x }}" cy="{{ $y }}" r="5" fill="var(--accent)"/>
+    <text x="{{ add $x 12 }}" y="{{ add $y 4 }}" class="journey-label">{{ $p.Params.company }}</text>
+  {{ end }}
+</svg>
+{{ end }}

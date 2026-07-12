@@ -1,0 +1,22 @@
+<section class="wrap relative pt-20 pb-16 overflow-hidden reveal">
+  {{ partial "journey.html" . }}
+  <p class="eyebrow mb-4">// fullstack engineer · machine learning</p>
+  <h1 class="font-display font-bold text-5xl md:text-7xl tracking-tight leading-[1.02] max-w-[12ch]" style="color:var(--heading)">
+    I build systems that track, <span class="grad-text">learn</span>&nbsp;and&nbsp;ship.
+  </h1>
+  <p class="mt-5 text-lg leading-relaxed max-w-[52ch]" style="color:var(--muted)">
+    I'm <b style="color:var(--text)">Loraine Monteagudo</b> — a software engineer working across
+    <b style="color:var(--text)">Python backends</b>, <b style="color:var(--text)">Vue &amp; Svelte frontends</b>,
+    and <b style="color:var(--text)">ML models</b> in production.
+  </p>
+  <div class="mt-8 flex gap-3.5 flex-wrap">
+    <a class="btn-solid" href="/projects/">View projects</a>
+    <a class="btn-ghost" href="mailto:{{ site.Params.social.email }}">Get in touch</a>
+  </div>
+</section>
+<div class="wrap flex flex-wrap gap-12 py-6" style="border-top:1px solid var(--border); border-bottom:1px solid var(--border)">
+  {{ range site.Data.stats }}
+  <div><b class="font-display text-2xl block" style="color:var(--heading)">{{ .value }}</b>
+  <span class="text-[13px]" style="color:var(--muted)">{{ .label }}</span></div>
+  {{ end }}
+</div>
