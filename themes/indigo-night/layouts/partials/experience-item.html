@@ -1,0 +1,9 @@
+<article class="relative pb-9 pl-8 tl-item">
+  <div class="font-mono text-xs" style="color:var(--accent)">
+    {{ .Params.startDate | time.Format "2006.01" }} — {{ with .Params.endDate }}{{ . | time.Format "2006.01" }}{{ else }}present{{ end }}
+  </div>
+  <h3 class="text-lg font-semibold mt-1.5" style="color:var(--heading)">
+    {{ .Title }} <span class="font-normal" style="color:var(--muted)">· {{ with .Params.website }}<a href="{{ . }}" class="no-underline" style="color:inherit">{{ $.Params.company }}</a>{{ else }}{{ .Params.company }}{{ end }}</span>
+  </h3>
+  <div class="mt-2 text-[14.5px] leading-relaxed max-w-[64ch]" style="color:var(--muted)">{{ .Content }}</div>
+</article>

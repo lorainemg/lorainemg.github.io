@@ -44,6 +44,8 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
   .tag { color:var(--accent); background:var(--bg); border:1px solid var(--border); @apply text-xs px-2.5 py-0.5 rounded-full no-underline; }
   .eyebrow { color:var(--accent); font-family:var(--font-mono); @apply text-xs tracking-[2px] uppercase; }
   .grad-text { background:linear-gradient(100deg,var(--accent),var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .tl-item::before { content:''; position:absolute; left:-7px; top:9px; width:12px; height:12px;
+    border-radius:9999px; background:var(--bg); border:2.5px solid var(--accent); }
 }
 
 @media (prefers-reduced-motion: reduce) {
