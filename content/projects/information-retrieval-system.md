@@ -6,4 +6,8 @@ skills: [Python, NLTK, Streamlit, Scikit-Learn]
 github: https://github.com/lorainemg/information-retrieval-system
 featured: false
 weight: 14
+build:
+  render: link
+sitemap:
+  disable: true
 ---

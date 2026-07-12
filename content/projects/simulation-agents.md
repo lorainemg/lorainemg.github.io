@@ -6,4 +6,8 @@ skills: [Python]
 github: https://github.com/lorainemg/agent
 featured: false
 weight: 21
+build:
+  render: link
+sitemap:
+  disable: true
 ---

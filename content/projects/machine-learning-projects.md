@@ -6,4 +6,8 @@ skills: [Python, Pandas, Scikit-Learn, TensorFlow, Keras]
 github: https://github.com/lorainemg/cp-ml
 featured: false
 weight: 8
+build:
+  render: link
+sitemap:
+  disable: true
 ---

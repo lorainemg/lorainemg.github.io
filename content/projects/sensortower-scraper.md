@@ -6,4 +6,8 @@ skills: [Python, Pandas, Selenium, HTML & CSS, JavaScript]
 github: https://github.com/lorainemg/sensortower-scraper
 featured: false
 weight: 17
+build:
+  render: link
+sitemap:
+  disable: true
 ---

@@ -6,4 +6,8 @@ skills: [Flask, Pandas, Jinja2]
 github: https://github.com/lorainemg/grammar-analyzer
 featured: false
 weight: 19
+build:
+  render: link
+sitemap:
+  disable: true
 ---

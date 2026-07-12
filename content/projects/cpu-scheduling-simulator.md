@@ -6,4 +6,8 @@ skills: [Python, Linux, NumPy]
 github: https://github.com/lorainemg/scheduler
 featured: false
 weight: 13
+build:
+  render: link
+sitemap:
+  disable: true
 ---

@@ -6,4 +6,8 @@ skills: [Scikit-Learn, Pandas, Plotly]
 github: https://github.com/lorainemg/schizophrenic-classification
 featured: false
 weight: 11
+build:
+  render: link
+sitemap:
+  disable: true
 ---

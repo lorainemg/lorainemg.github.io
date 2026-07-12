@@ -21,9 +21,12 @@
       </ul></div>{{ end }}
     </aside>
   </div>
+  {{ $detailPages := slice }}
+  {{ range (where site.RegularPages "Section" "projects").ByWeight }}{{ if ne (trim .Content " \n") "" }}{{ $detailPages = $detailPages | append . }}{{ end }}{{ end }}
+  {{ $idx := 0 }}{{ range $i, $p := $detailPages }}{{ if eq $p.Permalink $.Permalink }}{{ $idx = $i }}{{ end }}{{ end }}
   <nav class="flex justify-between py-7 pb-14 text-sm" style="border-top:1px solid var(--border)">
-    {{ with .NextInSection }}<a class="no-underline" style="color:var(--accent)" href="{{ .RelPermalink }}"><span class="font-mono text-xs block" style="color:var(--muted)">← prev</span>{{ .Title }}</a>{{ else }}<span></span>{{ end }}
-    {{ with .PrevInSection }}<a class="no-underline text-right" style="color:var(--accent)" href="{{ .RelPermalink }}"><span class="font-mono text-xs block" style="color:var(--muted)">next →</span>{{ .Title }}</a>{{ else }}<span></span>{{ end }}
+    {{ if gt $idx 0 }}{{ with index $detailPages (sub $idx 1) }}<a class="no-underline" style="color:var(--accent)" href="{{ .RelPermalink }}"><span class="font-mono text-xs block" style="color:var(--muted)">← prev</span>{{ .Title }}</a>{{ end }}{{ else }}<span></span>{{ end }}
+    {{ if lt $idx (sub (len $detailPages) 1) }}{{ with index $detailPages (add $idx 1) }}<a class="no-underline text-right" style="color:var(--accent)" href="{{ .RelPermalink }}"><span class="font-mono text-xs block" style="color:var(--muted)">next →</span>{{ .Title }}</a>{{ end }}{{ else }}<span></span>{{ end }}
   </nav>
 </main>
 {{ end }}

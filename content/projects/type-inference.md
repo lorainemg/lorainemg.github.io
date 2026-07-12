@@ -6,4 +6,8 @@ skills: [Python]
 github: https://github.com/lorainemg/type-inference
 featured: false
 weight: 18
+build:
+  render: link
+sitemap:
+  disable: true
 ---

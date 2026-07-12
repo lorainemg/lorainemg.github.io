@@ -15,5 +15,5 @@
     {{ range .RegularPages.ByWeight }}{{ partial "project-card.html" . }}{{ end }}
   </div>
 </main>
-{{ with resources.Get "js/filter.js" | minify | fingerprint }}<script src="{{ .RelPermalink }}" defer></script>{{ end }}
+{{ with resources.Get "js/filter.js" | minify | fingerprint }}<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>{{ end }}
 {{ end }}

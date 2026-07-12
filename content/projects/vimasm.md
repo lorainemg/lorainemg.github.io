@@ -6,4 +6,8 @@ skills: [Assembly]
 github: https://github.com/lorainemg/vimasm
 featured: true
 weight: 5
+build:
+  render: link
+sitemap:
+  disable: true
 ---

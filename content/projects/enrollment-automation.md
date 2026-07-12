@@ -6,4 +6,8 @@ skills: [Python, Django, Jinja2, HTML & CSS, MySQL]
 github: https://github.com/lorainemg/db-project
 featured: false
 weight: 6
+build:
+  render: link
+sitemap:
+  disable: true
 ---
