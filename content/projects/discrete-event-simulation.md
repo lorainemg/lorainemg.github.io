@@ -6,8 +6,4 @@ skills: [Python]
 github: https://github.com/lorainemg/discrete-event-simulation
 featured: false
 weight: 9
-build:
-  render: link
-sitemap:
-  disable: true
 ---

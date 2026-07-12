@@ -6,8 +6,4 @@ skills: [Python, Pytest]
 github: https://github.com/lorainemg/daa
 featured: false
 weight: 12
-build:
-  render: link
-sitemap:
-  disable: true
 ---

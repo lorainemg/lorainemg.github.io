@@ -2,6 +2,8 @@
 title: Full Stack Developer
 company: Deepdatatech
 location: Havana, Cuba
+workMode: Remote
+employmentType: Contract
 website: https://deepdatatech.com/
 startDate: 2021-06-01
 endDate: 2022-01-01

@@ -6,8 +6,4 @@ skills: [Python, Blockchain]
 github: https://github.com/lorainemg/chat-block
 featured: false
 weight: 20
-build:
-  render: link
-sitemap:
-  disable: true
 ---

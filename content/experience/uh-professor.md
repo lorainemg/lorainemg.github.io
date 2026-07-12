@@ -2,6 +2,8 @@
 title: Assistant Professor and Researcher
 company: University of Havana
 location: Havana, Cuba
+workMode: On-site
+employmentType: Full-time
 website: https://www.uh.cu
 startDate: 2022-01-01
 endDate: 2022-08-01

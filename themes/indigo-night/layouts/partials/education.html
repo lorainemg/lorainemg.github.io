@@ -15,7 +15,7 @@
       <p class="eyebrow mb-3">CERTIFICATIONS</p>
       <ul class="list-none space-y-2 mb-6">
         {{ range site.Data.education.certifications }}
-        <li class="text-sm" style="color:var(--text)">{{ if .url }}<a href="{{ .url }}" style="color:var(--accent)" class="no-underline">{{ .name }}</a>{{ else }}{{ .name }}{{ end }} <span style="color:var(--muted)">— {{ .issuer }} · {{ .year }}</span></li>
+        <li class="text-sm" style="color:var(--text)">{{ if .url }}<a href="{{ .url }}" style="color:var(--accent)" class="no-underline">{{ .name }}</a>{{ else }}{{ .name }}{{ end }} <span style="color:var(--muted)">· {{ .issuer }} · {{ .year }}</span></li>
         {{ end }}
       </ul>
       <p class="eyebrow mb-3">PUBLICATIONS</p>

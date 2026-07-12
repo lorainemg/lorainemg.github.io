@@ -2,6 +2,8 @@
 title: Undergraduate Student Researcher
 company: University of Havana
 location: Havana, Cuba
+workMode: On-site
+employmentType: Part-time
 website: https://www.uh.cu
 startDate: 2017-09-01
 endDate: 2021-12-01

@@ -1,13 +1,11 @@
-{{ $hasBody := ne (trim .Content " \n") "" }}
-{{ $href := cond $hasBody .RelPermalink .Params.github }}
-<article class="card flex flex-col" data-category="{{ .Params.category }}">
+<article class="card relative flex flex-col" data-category="{{ .Params.category }}">
   <div class="flex justify-between items-center mb-3.5">
     <span class="eyebrow">{{ replace (upper .Params.category) "-" " · " }}</span>
-    {{ with .Params.github }}<a class="text-xs no-underline" style="color:var(--muted)" href="{{ . }}">github ↗</a>{{ end }}
+    {{ with .Params.github }}<a class="relative z-10 text-xs no-underline" style="color:var(--muted)" href="{{ . }}">github ↗</a>{{ end }}
   </div>
-  <h3 class="font-semibold" style="color:var(--heading)"><a class="no-underline" style="color:inherit" href="{{ $href }}">{{ .Title }}</a></h3>
+  <h3 class="font-semibold" style="color:var(--heading)"><a class="card-link no-underline" style="color:inherit" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
   <p class="text-sm mt-2 flex-1" style="color:var(--muted)">{{ .Description }}</p>
-  <div class="flex gap-2 flex-wrap mt-4">
+  <div class="relative z-10 flex gap-2 flex-wrap mt-4">
     {{ range .Params.skills }}{{ with index site.Taxonomies.skills (lower .) }}<a class="tag" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>{{ else }}<span class="tag">{{ . }}</span>{{ end }}{{ end }}
   </div>
 </article>

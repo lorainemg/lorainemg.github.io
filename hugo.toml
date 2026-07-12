@@ -8,6 +8,7 @@ theme = "indigo-night"
 
 [params]
   tagline = "Software Engineer specializing in FullStack development and Machine Learning"
+  location = "Tampa, Florida"
   cvPath = ""   # set to e.g. "files/loraine-monteagudo-cv.pdf" when the PDF exists
   [params.social]
     github = "https://github.com/lorainemg"

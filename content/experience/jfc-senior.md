@@ -2,6 +2,8 @@
 title: Senior Full Stack Developer
 company: Jack's Flight Club
 location: Tampa, Florida
+workMode: Remote
+employmentType: Full-time
 website: https://jacksflightclub.com
 startDate: 2024-09-01
 endDate: null

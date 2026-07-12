@@ -6,8 +6,4 @@ skills: [Python, NumPy]
 github: https://github.com/lorainemg/fuzzy-inference-system
 featured: false
 weight: 16
-build:
-  render: link
-sitemap:
-  disable: true
 ---

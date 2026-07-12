@@ -2,9 +2,9 @@ degree:
   title: BSc. Computer Science
   institution: University of Havana
   location: Havana, Cuba
-  years: 2016–2021
+  years: 2016-2021
   gpa: 4.81 / 5
-  note: Member of the Artificial Intelligence research group — publications, conferences, competitions.
+  note: Member of the Artificial Intelligence research group, with publications, conferences and competitions.
 certifications:
   - name: Associate Data Scientist in Python
     issuer: DataCamp

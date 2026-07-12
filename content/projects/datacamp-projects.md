@@ -6,8 +6,4 @@ skills: [Python, Pandas, Scikit-Learn]
 github: https://github.com/lorainemg/datacamp-projects
 featured: false
 weight: 7
-build:
-  render: link
-sitemap:
-  disable: true
 ---

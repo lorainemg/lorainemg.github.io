@@ -2,6 +2,8 @@
 title: Full Stack Developer
 company: Arealec
 location: Zaragoza, Spain
+workMode: Remote
+employmentType: Contract
 website: http://www.araelec.com/
 startDate: 2022-02-01
 endDate: null

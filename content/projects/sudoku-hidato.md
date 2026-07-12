@@ -6,8 +6,4 @@ skills: [Haskell]
 github: https://github.com/lorainemg/Sudoku-Hidato
 featured: false
 weight: 10
-build:
-  render: link
-sitemap:
-  disable: true
 ---

@@ -6,8 +6,4 @@ skills: [R]
 github: https://github.com/lorainemg/Household-Analysis
 featured: false
 weight: 15
-build:
-  render: link
-sitemap:
-  disable: true
 ---
