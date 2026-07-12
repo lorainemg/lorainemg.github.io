@@ -8,6 +8,6 @@
   <h3 class="font-semibold" style="color:var(--heading)"><a class="no-underline" style="color:inherit" href="{{ $href }}">{{ .Title }}</a></h3>
   <p class="text-sm mt-2 flex-1" style="color:var(--muted)">{{ .Description }}</p>
   <div class="flex gap-2 flex-wrap mt-4">
-    {{ range .Params.skills }}<a class="tag" href="/skills/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+    {{ range .Params.skills }}{{ with index site.Taxonomies.skills (lower .) }}<a class="tag" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>{{ else }}<span class="tag">{{ . }}</span>{{ end }}{{ end }}
   </div>
 </article>
