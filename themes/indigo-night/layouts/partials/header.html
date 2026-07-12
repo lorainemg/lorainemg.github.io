@@ -1,0 +1,10 @@
+<header class="wrap flex items-center justify-between py-6">
+  <a href="/" class="font-display font-bold text-lg no-underline" style="color:var(--heading)">loraine<span style="color:var(--accent)">.</span></a>
+  <nav class="flex items-center gap-6 text-sm">
+    <a class="no-underline font-medium" style="color:var(--muted)" href="/#experience">Experience</a>
+    <a class="no-underline font-medium" style="color:var(--muted)" href="/projects/">Projects</a>
+    <a class="no-underline font-medium" style="color:var(--muted)" href="/#skills">Skills</a>
+    {{ with site.Params.cvPath }}<a class="btn-solid" href="/{{ . }}" download>Download CV</a>{{ end }}
+    <button id="theme-toggle" aria-label="Toggle color theme" class="chip cursor-pointer">◐</button>
+  </nav>
+</header>

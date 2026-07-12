@@ -4,6 +4,11 @@
   {{ partial "head.html" . }}
 </head>
 <body>
+  {{ partial "header.html" . }}
   {{ block "main" . }}{{ end }}
+  {{ partial "footer.html" . }}
+  {{ with resources.Get "js/theme-toggle.js" | minify | fingerprint }}
+    <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+  {{ end }}
 </body>
 </html>
