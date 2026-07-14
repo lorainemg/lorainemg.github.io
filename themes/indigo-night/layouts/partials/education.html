@@ -8,19 +8,21 @@
       {{ with site.Data.education.degree }}
       <div class="card mb-6">
         <h3 class="font-semibold" style="color:var(--heading)">{{ .title }}</h3>
-        <p class="font-mono text-xs mt-1" style="color:var(--accent)">{{ .institution }} · {{ .years }} · GPA {{ .gpa }}</p>
+        <p class="font-mono text-xs mt-1" style="color:var(--accent)">{{ .institution }}</p>
+        <p class="font-mono text-xs mt-1" style="color:var(--muted)">{{ .years }} · GPA {{ .gpa }}</p>
         <p class="text-sm mt-2" style="color:var(--muted)">{{ .note }}</p>
       </div>
       {{ end }}
       <p class="eyebrow mb-3">CERTIFICATIONS</p>
       <ul class="list-none space-y-2 mb-6">
         {{ range site.Data.education.certifications }}
-        <li class="text-sm" style="color:var(--text)">{{ if .url }}<a href="{{ .url }}" style="color:var(--accent)" class="no-underline">{{ .name }}</a>{{ else }}{{ .name }}{{ end }} <span style="color:var(--muted)">· {{ .issuer }} · {{ .year }}</span></li>
+        <li><span class="text-sm font-semibold" style="color:var(--text)">{{ if .url }}<a href="{{ .url }}" style="color:var(--accent)" class="no-underline">{{ .name }} ↗</a>{{ else }}{{ .name }}{{ end }}</span>
+        <span class="text-sm block" style="color:var(--muted)">{{ .issuer }} · {{ .year }}</span></li>
         {{ end }}
       </ul>
       <p class="eyebrow mb-3">PUBLICATIONS</p>
       <ul class="list-none space-y-2">
-        {{ range site.Data.education.publications }}<li class="text-sm italic" style="color:var(--muted)">{{ . }}</li>{{ end }}
+        {{ range site.Data.education.publications }}<li class="text-sm italic" style="color:var(--muted)">{{ if .url }}<a href="{{ .url }}" class="no-underline" style="color:var(--accent)">{{ .name }} ↗</a>{{ else }}{{ .name }}{{ end }}</li>{{ end }}
       </ul>
     </div>
     <div>
