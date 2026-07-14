@@ -1,13 +1,11 @@
 <section class="wrap relative pt-20 pb-16 overflow-hidden reveal">
   {{ partial "journey.html" . }}
-  <p class="eyebrow mb-4">// fullstack engineer · machine learning{{ with site.Params.location }} · {{ . }}{{ end }}</p>
+  <p class="eyebrow mb-4">{{ site.Params.hero.eyebrow }}{{ with site.Params.location }} · {{ . }}{{ end }}</p>
   <h1 class="font-display font-bold text-5xl md:text-7xl tracking-tight leading-[1.02] max-w-[12ch]" style="color:var(--heading)">
-    I build systems that track, <span class="grad-text">learn</span>&nbsp;and&nbsp;ship.
+    {{ replaceRE `\*([^*]+)\*` `<span class="grad-text">$1</span>` site.Params.hero.headline | safeHTML }}
   </h1>
-  <p class="mt-5 text-lg leading-relaxed max-w-[52ch]" style="color:var(--muted)">
-    I'm <b style="color:var(--text)">Loraine Monteagudo</b>, a software engineer working across
-    <b style="color:var(--text)">Python backends</b>, <b style="color:var(--text)">Vue &amp; Svelte frontends</b>,
-    and <b style="color:var(--text)">ML models</b> in production.
+  <p class="hero-intro mt-5 text-lg leading-relaxed max-w-[52ch]" style="color:var(--muted)">
+    {{ site.Params.hero.intro | markdownify }}
   </p>
   <div class="mt-8 flex gap-3 flex-wrap">
     {{ with site.Params.social.email }}
