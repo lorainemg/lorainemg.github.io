@@ -8,10 +8,11 @@
   <p class="eyebrow mt-6 mb-3">{{ upper .group }}</p>
   <div class="flex gap-2.5 flex-wrap">
     {{ range .items }}
+      {{ $s := . }}
       {{ with index site.Taxonomies.skills (lower .) }}
-        <a class="chip" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+        <a class="chip" href="{{ .Page.RelPermalink }}">{{ $s }}</a>
       {{ else }}
-        <span class="chip" style="opacity:.6">{{ . }}</span>
+        <span class="chip" style="opacity:.6">{{ $s }}</span>
       {{ end }}
     {{ end }}
   </div>

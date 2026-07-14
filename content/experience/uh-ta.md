@@ -8,6 +8,8 @@ website: https://www.uh.cu
 startDate: 2018-09-01
 endDate: 2021-12-01
 skills: [C#]
+softSkills: [Mentoring]
 ---
 
-- Assisted teaching Logic classes; prepared and graded exams
+- Assisted in teaching Logic over 3 semesters, leading practice sessions and helping students work through difficult concepts.
+- Helped to prepare and grade exams, ensuring fair assessment and giving students timely, useful feedback on their work.

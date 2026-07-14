@@ -18,8 +18,9 @@
   {{ with .Params.workMode }}{{ $meta = $meta | append . }}{{ end }}
   {{ with .Params.employmentType }}{{ $meta = $meta | append . }}{{ end }}
   {{ if $meta }}<div class="font-mono text-[11px] mt-1" style="color:var(--muted)">{{ delimit $meta " · " }}</div>{{ end }}
-  <div class="mt-2 text-[14.5px] leading-relaxed" style="color:var(--muted)">{{ .Content }}</div>
-  {{ with .Params.skills }}<div class="flex gap-2 flex-wrap mt-3">
-    {{ range . }}{{ with index site.Taxonomies.skills (lower .) }}<a class="tag" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>{{ else }}<span class="tag">{{ . }}</span>{{ end }}{{ end }}
+  <div class="exp-body mt-2 text-[14.5px] leading-relaxed" style="color:var(--muted)">{{ .Content }}</div>
+  {{ if or .Params.skills .Params.softSkills }}<div class="flex gap-2 flex-wrap mt-3">
+    {{ range .Params.skills }}{{ $s := . }}{{ with index site.Taxonomies.skills (lower .) }}<a class="tag" href="{{ .Page.RelPermalink }}">{{ $s }}</a>{{ else }}<span class="tag">{{ $s }}</span>{{ end }}{{ end }}
+    {{ range .Params.softSkills }}<span class="tag-soft">{{ . }}</span>{{ end }}
   </div>{{ end }}
 </article>

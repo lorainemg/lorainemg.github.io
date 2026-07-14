@@ -1,12 +1,16 @@
 - group: Languages
   items: [Python, TypeScript, JavaScript, HTML & CSS, C#]
-- group: Backend & Data
-  items: [FastAPI, Flask, Django, SQLAlchemy, PostgreSQL, MySQL, Redis, Pandas]
+- group: Backend & Databases
+  items: [FastAPI, Flask, Django, SQLAlchemy, PostgreSQL, MySQL, Redis]
+- group: Data & Visualization
+  items: [Pandas, NumPy, Plotly, Streamlit, Google BigQuery, Google Sheets, Jupyter Notebooks]
 - group: Machine Learning
-  items: [Scikit-Learn, TensorFlow, Keras, NumPy, NLTK, spaCy]
+  items: [Scikit-Learn, TensorFlow, Keras, NLTK, spaCy, MLFlow]
 - group: Frontend
-  items: [Vue, Svelte, TailwindCSS]
+  items: [Vue, Svelte, TailwindCSS, Strapi]
+- group: Protocols & Messaging
+  items: [WebSockets, MQTT, gRPC]
 - group: DevOps & Cloud
-  items: [Docker, GitHub Actions, Git, Linux, Kubernetes, Terraform, AWS]
+  items: [Docker, GitHub Actions, Git, Linux, Terraform, Azure, Cloudflare, Caddy, Grafana]
 - group: Testing & Tools
-  items: [Pytest, Playwright, Selenium, Plotly, Streamlit]
+  items: [Pytest, Playwright, Selenium, Sentry]

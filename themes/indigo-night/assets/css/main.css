@@ -46,6 +46,7 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
   .chip { background:var(--surface); border:1px solid var(--border); color:var(--text); @apply text-sm font-medium px-4 py-2 rounded-lg no-underline; }
   .chip:hover { border-color:var(--accent); color:var(--accent); }
   .tag { color:var(--accent); background:var(--bg); border:1px solid var(--border); @apply text-xs px-2.5 py-0.5 rounded-full no-underline; }
+  .tag-soft { color:var(--violet); background:var(--bg); border:1px solid var(--border); @apply text-xs px-2.5 py-0.5 rounded-full; }
   .eyebrow { color:var(--accent); font-family:var(--font-mono); @apply text-xs tracking-[2px] uppercase; }
   .grad-text { background:linear-gradient(100deg,var(--accent),var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .on { background:var(--accent-deep) !important; border-color:var(--accent-deep) !important; color:#fff !important; }
@@ -53,6 +54,9 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
     border-radius:9999px; background:var(--bg); border:2.5px solid var(--accent); }
   .card-link::after { content:''; position:absolute; inset:0; }
   .hero-intro strong { color:var(--text); font-weight:600; }
+  .exp-body li { position:relative; padding-left:1.25rem; }
+  .exp-body li + li { margin-top:.4rem; }
+  .exp-body li::before { content:'▸'; position:absolute; left:0; color:var(--accent); font-size:.75em; top:.35em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
