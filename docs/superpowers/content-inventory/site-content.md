@@ -97,7 +97,7 @@
 - **Dev & DevOps:** Linux, Docker, GitHub Actions, Git, Kubernetes, Terraform
 - **Backend:** FastAPI, Flask, Django
 - **Databases/Data:** PostgreSQL, MySQL, SQLAlchemy, Redis, Pandas
-- **ML & DS:** Scikit-Learn, TensorFlow, Keras, NumPy, NLTK, spaCy
+- **ML & DS:** Scikit-Learn, TensorFlow, Keras, NumPy, NLP, spaCy
 - **Frontend:** Svelte, Vue, TailwindCSS, Jinja2
 - **Testing/Automation:** Pytest, Playwright, Selenium
 - **Data Viz:** Plotly, Streamlit

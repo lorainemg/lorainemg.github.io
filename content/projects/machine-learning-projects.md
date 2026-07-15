@@ -1,9 +1,20 @@
 ---
-title: Machine Learning Projects
-description: "Collection of Machine Learning teaching projects: Supervised Classification and Introduction to Sklearn (KNN and Naive Bayes to classify 1000 positive and 1000 negative movie reviews by text content); Decision Trees and Random Forest (Iris dataset decision spaces; sentiment analysis on Rotten Tomatoes reviews); Logistic Regression (classification of Rotten Tomatoes reviews using confusion matrices, coefficient analysis, and bigrams); Support Vector Machine and Cross-Validation (predicting heart attack likelihood; AUC metrics for imbalanced datasets and cross-validation); Clustering Algorithms: K-Means and DBSCAN (clustering methods, K-means issues, cluster metrics, DBSCAN as alternative); Dimension Reduction Algorithms (PCA, Kernel PCA, LDA, and t-SNE on the Iris dataset); and Neural Networks (MLPs with Keras for fashion_mnist image classification and California housing price prediction)."
-category: ml-nlp
-skills: [Python, Pandas, Scikit-Learn, TensorFlow, Keras]
+title: Machine Learning Practical Classes
+description: "Hands-on Jupyter notebooks created for teaching machine learning at the university level: a series of practical sessions where students learn the algorithms by using them."
+category: teaching
+skills: [Python, Jupyter, Machine Learning, Scikit-Learn, Teaching]
 github: https://github.com/lorainemg/cp-ml
 featured: false
 weight: 8
 ---
+
+The practical side of a university machine learning course: a series of
+hands-on Jupyter notebooks I created and taught as an Assistant Professor,
+where students moved from theory to working code in each session.
+
+The materials are organized as sequential practical classes, each one a
+self-contained notebook session covering a stage of the machine learning
+curriculum, designed so students experiment with the algorithms directly
+rather than only seeing them on slides.
+
+Teaching materials in Spanish, built around Python's scientific stack.

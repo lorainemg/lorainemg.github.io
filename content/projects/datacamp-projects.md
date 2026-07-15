@@ -1,9 +1,23 @@
 ---
-title: DataCamp Projects
-description: "A collection of DataCamp guided projects: Introduction to DataCamp Projects (intro to Jupyter notebooks, running code cells, loading and displaying pandas DataFrames); Investigating Netflix Movies and Guest Stars in The Office (foundational Python skills manipulating and visualizing movie and TV data, analyzing films by genre); The GitHub History of the Scala Language (finding the true Scala experts by exploring its development history in Git and GitHub); The Android App Market on Google Play (loading, cleaning, and visualizing scraped Google Play Store data for insights into the Android app market); and A Visual History of Nobel Prize Winners (exploring a Kaggle dataset of a century of Nobel Laureates, analyzing bias by gender and nationality)."
-category: web-data
-skills: [Python, Pandas, Scikit-Learn]
+title: DataCamp Data Science Projects
+description: "A collection of hands-on data analysis projects from DataCamp's Data Scientist with Python track: real datasets explored, cleaned, and visualized in Jupyter notebooks."
+category: data-science
+skills: [Python, Pandas, Matplotlib, Jupyter, Data Analysis, Data Visualization]
 github: https://github.com/lorainemg/datacamp-projects
 featured: false
-weight: 7
 ---
+
+A collection of data analysis projects completed as part of DataCamp's Data
+Scientist with Python career track, each one a self-contained case study on a
+real dataset.
+
+The projects cover a range of domains and questions: trends in Netflix movie
+durations, the development history of the Scala language told through its
+Git activity, the Android app market on Google Play, more than a century of
+Nobel Prize winners, and a reanalysis of the 1840s hospital data with which
+Dr. Semmelweis discovered the importance of handwashing.
+
+Across the notebooks the workflow is consistent: load and clean messy real
+data with Pandas, explore it, and communicate findings through
+visualizations, practicing the fundamentals that underpin larger data
+science work.

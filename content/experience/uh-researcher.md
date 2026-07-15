@@ -7,7 +7,7 @@ employmentType: Part-time
 website: https://www.uh.cu
 startDate: 2017-09-01
 endDate: 2021-12-01
-skills: [Python, Scikit-Learn, Pandas, Git, spaCy, NLTK, NumPy, TensorFlow, Keras, Jupyter Notebooks]
+skills: [Python, Scikit-Learn, Pandas, Git, spaCy, NLP, NumPy, TensorFlow, Keras, Jupyter Notebooks]
 ---
 
 - Conducted research in natural language processing focused on extracting structured knowledge from medical text, contributing to the creation of annotated corpora used in the IberLEF eHealth international research challenges.

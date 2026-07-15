@@ -1,8 +1,8 @@
 ---
 title: eHealth-KD Challenge 2021
-description: "Final submission for the eHealth-KD Challenge by the UH-MMM team at IberLEF 2021. Focuses on Named Entity Recognition (NER) and Relation Extraction (RE) using machine learning models (BiLSTM and Dense layers)."
+description: "5th-place submission for the eHealth-KD Challenge at IberLEF 2021 by the UH-MMM team. Neural models for Named Entity Recognition and Relation Extraction in Spanish medical text."
 category: ml-nlp
-skills: [Scikit-Learn, Keras, TensorFlow, NLTK, spaCy]
+skills: [TensorFlow, Keras, Scikit-Learn, NLP, spaCy]
 github: https://github.com/lorainemg/eHealthKD-competition
 links:
   - name: Paper (PDF)
@@ -13,14 +13,26 @@ featured: true
 weight: 1
 ---
 
-Final submission for the eHealth-KD Challenge, presented by the UH-MMM team at
-IberLEF 2021. The shared task combines two subtasks: Named Entity Recognition
-(NER) and Relation Extraction (RE).
+A machine learning system that reads Spanish medical text and extracts
+structured knowledge from it: the medical concepts mentioned and how they
+relate to each other. Built as the UH-MMM team's submission to the eHealth-KD
+Challenge at IberLEF 2021, an international research competition, where it
+ranked 5th overall in the main evaluation scenario.
 
-Both tasks share a common architecture: BiLSTM layers act as contextual
-encoders, with Dense layers as the tag decoder. The pipeline was built with
-Scikit-Learn, Keras and TensorFlow, using spaCy and NLTK for text
-preprocessing.
+The challenge combines two subtasks. First, Named Entity Recognition finds
+and classifies the relevant entities in each sentence (concepts, actions,
+predicates, references). Then, Relation Extraction detects the semantic
+relations between them, turning free-form text into a small knowledge graph.
 
-The system ranked 5th overall in the challenge's main evaluation scenario, as
-documented in the team's workshop paper linked below.
+Both tasks share a common neural architecture: BiLSTM layers act as
+contextual encoders, with Dense layers decoding the output tags. The models
+combine word-level embeddings (FastText embeddings trained on Spanish medical
+text) with character-level representations, which helps them handle the rare
+and unseen words common in the medical domain. The entity
+multi-task learning, predicting part-of-speech tags along
+improve its grasp of sentence structure.
+
+The pipeline was built with TensorFlow and Keras, with sp
+text preprocessing, and includes the full workflow from t
+challenge data to the submission format. The approach is
+team's workshop paper linked above.

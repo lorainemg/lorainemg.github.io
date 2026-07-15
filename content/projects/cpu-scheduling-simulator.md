@@ -1,9 +1,27 @@
 ---
-title: CPU Scheduling Simulator
-description: "A CPU Scheduling Simulator implementing various scheduling algorithms: First-Come First-Served (FIFO), Shortest Job First (SJF), Shortest Time to Completion First (STCF), and Round Robin (RR). Handles job execution with arrival times, execution times, and I/O interruptions while calculating performance metrics such as turnaround time and response time."
+title: CPU Scheduler Simulator
+description: "A simulator of how operating systems share the processor between competing jobs, implementing four classic scheduling algorithms and comparing their performance."
 category: systems
-skills: [Python, Linux, NumPy]
+skills: [Python, NumPy, Operating Systems, Scheduling Algorithms, Simulation]
 github: https://github.com/lorainemg/scheduler
 featured: false
+featured: false 
 weight: 13
 ---
+
+A simulator that answers a core operating systems question: given many jobs
+competing for one processor, in what order should they run? The project
+implements four classic scheduling strategies from scratch: First-Come
+First-Served, Shortest Job First, Shortest Time to Completion First, and
+Round Robin.
+
+The simulator models jobs with different arrival times, execution durations,
+and I/O interruptions, runs them through each scheduling strategy, and
+measures the results with standard performance metrics such as turnaround
+time and response time. This makes the trade-offs between algorithms
+concrete: some favor short jobs, some favor fairness, and the numbers show
+exactly what each choice costs.
+
+Implemented in Python with a modular design separating the job model, the
+scheduling algorithms, and the metrics, so new strategies can be added and
+compared easily.

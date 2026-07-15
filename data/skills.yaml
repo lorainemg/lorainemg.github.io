@@ -1,16 +1,26 @@
 - group: Languages
-  items: [Python, TypeScript, JavaScript, HTML & CSS, C#]
+  items: [Python, TypeScript, JavaScript, HTML & CSS, C#, R, Haskell, x86 Assembly]
 - group: Backend & Databases
-  items: [FastAPI, Flask, Django, SQLAlchemy, PostgreSQL, MySQL, Redis]
+  items: [FastAPI, Flask, Django, SQLAlchemy, PostgreSQL, MySQL, SQLite, Redis]
 - group: Data & Visualization
-  items: [Pandas, NumPy, Plotly, Streamlit, Google BigQuery, Google Sheets, Jupyter Notebooks]
+  items: [Pandas, NumPy, Matplotlib, Plotly, Streamlit, Google BigQuery, Google Sheets, Jupyter Notebooks]
 - group: Machine Learning
-  items: [Scikit-Learn, TensorFlow, Keras, NLTK, spaCy, MLFlow]
+  items: [Scikit-Learn, TensorFlow, Keras, XGBoost, spaCy, MLFlow]
 - group: Frontend
   items: [Vue, Svelte, TailwindCSS, Strapi]
 - group: Protocols & Messaging
-  items: [WebSockets, MQTT, gRPC]
+  items: [REST APIs, WebSockets, MQTT, gRPC]
 - group: DevOps & Cloud
-  items: [Docker, GitHub Actions, Git, Linux, Terraform, Azure, Cloudflare, Caddy, Grafana]
+  items: [Docker, GitHub Actions, Jenkins, Git, Linux, Terraform, Azure, Cloudflare, Caddy, Grafana]
 - group: Testing & Tools
   items: [Pytest, Playwright, Selenium, Sentry]
+- group: ML & Data Concepts
+  items: [NLP, Clustering, Information Retrieval, Sentiment Analysis, AutoML, Meta-Learning, Signal Processing, Web Scraping]
+- group: Statistics & Modeling
+  items: [Statistics, Probability, Hypothesis Testing, Regression, PCA, Simulation]
+- group: Algorithms & Data Structures
+  items: [Dynamic Programming, Divide and Conquer, Greedy Algorithms, Backtracking, Constraint Solving, Data Structures, Complexity Analysis]
+- group: Compilers & Theory
+  items: [Compilers, Parsing, Interpreters, Type Systems, Formal Languages, Automata]
+- group: Systems & Paradigms
+  items: [Operating Systems, Low-Level Programming, Functional Programming]

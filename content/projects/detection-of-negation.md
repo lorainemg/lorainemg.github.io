@@ -1,8 +1,8 @@
 ---
-title: Detection of Negation
-description: '"The automatic detection of negation and the words they affect is an important task that could benefit other Natural Language Processing tasks such as Information Extraction, Sentiment Analysis, and Question Answering." A two-phase supervised machine learning approach for identifying negation signals and their scope in Spanish texts, with text preprocessing, model training, and a containerized Streamlit application for testing.'
+title: Negation Detection in Spanish Text
+description: "An NLP system that detects negation in Spanish text: it finds the words that express negation and determines exactly which parts of the sentence they affect."
 category: ml-nlp
-skills: [Python, NLTK, spaCy, Scikit-Learn, Streamlit]
+skills: [Python, Scikit-Learn, NLP, Machine Learning, Docker]
 github: https://github.com/lorainemg/negation-detection
 links:
   - name: Paper (PDF)
@@ -13,14 +13,21 @@ featured: false
 weight: 4
 ---
 
-"The automatic detection of negation and the words they affect is an
-important task that could benefit other Natural Language Processing tasks
-such as Information Extraction, Sentiment Analysis, and Question Answering."
+Negation is one of the quiet failure modes of language processing: a system
+that reads "no presenta fiebre" and extracts "fiebre" without noticing the
+negation gets the meaning exactly backwards. This project detects negation in
+Spanish text so downstream tasks like information extraction, sentiment
+analysis, and question answering can account for it.
 
-The project implements a two-phase supervised machine learning approach for
-identifying negation signals and their scope in Spanish texts, covering text
-preprocessing and model training with Scikit-Learn, spaCy and NLTK.
+The problem is solved in two supervised phases. First, a classifier
+identifies negation cues, the words or expressions that signal a negation.
+Then a second phase determines each cue's scope: which words in the sentence
+are actually affected by it.
 
-A containerized Streamlit application exposes the trained models for
-interactive testing. Training and evaluation draw on the SFU ReviewSP-NEG
-corpus, linked below alongside the project's paper.
+The models are linear classifiers (scikit-learn) built on linguistic
+features: each word's form, lemma, and part-of-speech tag, plus a window of
+context around it. Training data comes from an annotated Spanish corpus, and
+the pipeline covers corpus parsing, training, and evaluation.
+
+The project ships fully containerized with Docker, including a ready-to-use
+development environment.

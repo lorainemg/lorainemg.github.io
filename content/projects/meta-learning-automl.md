@@ -1,8 +1,8 @@
 ---
-title: A Meta-Learning Strategy for Generic AutoML Pipelines
-description: "The field of Automated Machine Learning (AutoML) has been highlighted as one of the main alternatives to finding good solutions for complex machine learning problems. Despite the recent success of AutoML, many challenges remain: learning AutoML is a time-consuming process and can be computationally inefficient. Meta-learning is the process of learning from past experiences by applying various learning algorithms to different types of data, thus reducing the time needed to learn new tasks. Meta-learning techniques can serve as efficient support for the AutoML process, learning from previous tasks the best algorithms to solve a certain type of problem, speeding up AutoML and obtaining better results in the same period. The objective of this thesis project is to design a meta-learning strategy for generic domains in machine learning."
-category: ml-nlp
-skills: [Python, Scikit-Learn, TensorFlow, Pandas, Docker]
+title: AutoGOAL - Meta-Learning Extension
+description: "A meta-learning subsystem for AutoGOAL, an open-source AutoML framework: it learns from past experiments to predict which ML pipelines will perform well on a new dataset, before training anything."
+category: ml
+skills: [Python, AutoML, Meta-Learning, Scikit-Learn, XGBoost, Machine Learning Research]
 github: https://github.com/lorainemg/autogoal
 links:
   - name: Experiments (thesis)
@@ -13,16 +13,26 @@ featured: true
 weight: 2
 ---
 
-Automated Machine Learning (AutoML) is one of the main approaches to finding
-good solutions for complex machine learning problems, but learning to run
-AutoML well is itself a time-consuming and computationally inefficient
-process.
+AutoGOAL is an open-source AutoML framework that automatically finds machine
+learning pipelines for a given problem by searching a huge space of possible
+algorithm combinations. That search is powerful but starts from zero on every
+new problem. My contribution attacks exactly that: a meta-learning subsystem
+that lets the framework learn from its own past experiments.
 
-Meta-learning addresses this by learning from past experience: applying
-learning algorithms across many prior tasks so that, for a new problem, the
-best algorithms can be selected faster and with better results, speeding up
-the overall AutoML process.
+The idea is to treat machine learning itself as a learning problem. Every
+dataset is described by a set of meta-features (its size, number of classes,
+statistical properties), and every past experiment records how well each
+pipeline performed. From that experience, a meta-learner predicts which
+pipelines are promising for a dataset it has never seen, so the search can
+start from likely winners instead of random guesses, reducing training time
+and improving the quality of the solutions found.
 
-This bachelor's thesis project designs a meta-learning strategy for generic
-machine learning domains. The solution code, the experiments used to validate
-it, and the full written dissertation are linked below.
+The work spans the full pipeline: automated extraction of meta-features from
+datasets, processing of historical pipeline results into training data, and
+two meta-learner implementations (nearest-neighbors and a neural network
+with different ranking strategies), plus the experimental infrastructure to
+evaluate the approach across many datasets.
+
+Developed as machine learning research at the University of Havana, building
+on the AutoGOAL framework created by the university's AI research group
+(over 100 commits on the research branch).
