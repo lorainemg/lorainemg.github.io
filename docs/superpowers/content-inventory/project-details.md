@@ -57,7 +57,7 @@ Compiled from https://loraine-portfolio.framer.website (fetched 2026-07-11). 21 
 
 - **URL:** https://loraine-portfolio.framer.website/projects/ehealth-kd-challenge-2021
 - **Description:** Final submission for the eHealth-KD Challenge by the UH-MMM team at IberLEF 2021. Focuses on Named Entity Recognition (NER) and Relation Extraction (RE) using machine learning models (BiLSTM and Dense layers).
-- **Tech/Tags:** Scikit-Learn, Keras, TensorFlow, NLTK, spaCy; skills: Machine Learning, NER, Relation Extraction, Neural Networks, Deep Learning, Model Tuning, Feature Extraction, NLP
+- **Tech/Tags:** Scikit-Learn, Keras, TensorFlow, NLP, spaCy; skills: Machine Learning, NER, Relation Extraction, Neural Networks, Deep Learning, Model Tuning, Feature Extraction, NLP
 - **Dates:** 2021 (IberLEF 2021)
 - **Links:**
   - GitHub: https://github.com/lorainemg/eHealthKD-competition
@@ -139,7 +139,7 @@ Compiled from https://loraine-portfolio.framer.website (fetched 2026-07-11). 21 
 
 - **URL:** https://loraine-portfolio.framer.website/projects/information-retrieval-system
 - **Description:** Implements an Information Retrieval System based on the Vector Information Retrieval Model. Includes a visual interface powered by Streamlit and provides evaluation using various objective metrics across different test collections.
-- **Tech/Tags:** Python, NLTK, Streamlit, Scikit-Learn; skills: Machine Learning, Clustering, Content Filtering, Programming
+- **Tech/Tags:** Python, NLP, Streamlit, Scikit-Learn; skills: Machine Learning, Clustering, Content Filtering, Programming
 - **Dates:** None listed
 - **Links:**
   - GitHub: https://github.com/lorainemg/information-retrieval-system
@@ -181,7 +181,7 @@ Compiled from https://loraine-portfolio.framer.website (fetched 2026-07-11). 21 
 
 - **URL:** https://loraine-portfolio.framer.website/projects/cryptocurrency-forecasting
 - **Description:** Applied data extraction techniques to obtain the data, data analysis to visualize and analyze such data, and machine learning algorithms to predict cryptocurrency prices in the short future.
-- **Tech/Tags:** Python, Plotly, Streamlit, NLTK; skills: Machine Learning, Time-Series Forecasting, Time-Series Analysis, NLP, Data Manipulation, Importing & Cleaning Data, Data Visualization
+- **Tech/Tags:** Python, Plotly, Streamlit, NLP; skills: Machine Learning, Time-Series Forecasting, Time-Series Analysis, NLP, Data Manipulation, Importing & Cleaning Data, Data Visualization
 - **Dates:** None listed
 - **Links:**
   - GitHub: https://github.com/lorainemg/crypto-forecasting
@@ -208,7 +208,7 @@ Compiled from https://loraine-portfolio.framer.website (fetched 2026-07-11). 21 
 
 - **URL:** https://loraine-portfolio.framer.website/projects/detection-of-negation
 - **Description:** "The automatic detection of negation and the words they affect is an important task that could benefit other Natural Language Processing tasks such as Information Extraction, Sentiment Analysis, and Question Answering." A two-phase supervised machine learning approach for identifying negation signals and their scope in Spanish texts, with text preprocessing, model training, and a containerized Streamlit application for testing.
-- **Tech/Tags:** Python, NLTK, spaCy, Scikit-Learn; skills: Machine Learning, Natural Language Processing
+- **Tech/Tags:** Python, NLP, spaCy, Scikit-Learn; skills: Machine Learning, Natural Language Processing
 - **Dates:** None listed
 - **Links:**
   - GitHub: https://github.com/lorainemg/negation-detection

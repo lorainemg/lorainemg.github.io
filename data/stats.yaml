@@ -1,0 +1,9 @@
+# The stats strip under the hero.
+# `count: projects` auto-computes from the pages in content/projects/;
+# `count: skills` auto-computes from the items in data/skills.yaml.
+- value: "6+"
+  label: years of experience
+- count: projects
+  label: projects built
+- count: skills
+  label: technologies worked with

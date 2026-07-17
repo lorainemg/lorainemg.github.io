@@ -1,0 +1,26 @@
+{{ $roles := sort (where site.RegularPages "Section" "experience") "Params.startDate" "desc" }}
+{{ $companies := slice }}{{ $seen := dict }}
+{{ range $roles }}{{ if not (index $seen .Params.company) }}{{ $seen = merge $seen (dict .Params.company true) }}{{ $companies = $companies | append . }}{{ end }}{{ end }}
+{{ $n := len $companies }}
+{{ if gt $n 1 }}
+<svg class="journey absolute right-0 top-10 pointer-events-none" width="340" height="300" viewBox="0 0 340 300" aria-hidden="true">
+  <defs><linearGradient id="grad" gradientUnits="userSpaceOnUse" x1="0" y1="30" x2="0" y2="270">
+    <stop offset="0" style="stop-color:var(--accent)"/><stop offset="1" style="stop-color:var(--violet)"/>
+  </linearGradient></defs>
+  {{ $x := 40 }}
+  <line class="journey-path" x1="{{ $x }}" y1="30" x2="{{ $x }}" y2="270" stroke="url(#grad)" stroke-width="1"/>
+  {{ range $i, $p := $companies }}
+    {{ $y := add 30 (div (mul $i 240) (sub $n 1)) }}
+    {{ if eq $i 0 }}<circle class="journey-head" cx="{{ $x }}" cy="{{ $y }}" r="9" fill="none" stroke="var(--accent)" stroke-width="1"/>{{ end }}
+    <circle cx="{{ $x }}" cy="{{ $y }}" r="5" fill="var(--accent)"/>
+    <text x="{{ add $x 18 }}" y="{{ add $y 4 }}" class="journey-hash">{{ substr (md5 $p.Params.company) 0 7 }}</text>
+    <text x="{{ add $x 90 }}" y="{{ add $y 4 }}" class="journey-label">{{ $p.Params.company }}</text>
+    {{ $mine := where $roles "Params.company" $p.Params.company }}
+    {{ $earliest := index $mine (sub (len $mine) 1) }}
+    {{ $start := printf "%.4s" (printf "%v" $earliest.Params.startDate) }}
+    {{ $end := "now" }}{{ with $p.Params.endDate }}{{ $end = printf "%.4s" (printf "%v" .) }}{{ end }}
+    <text x="{{ add $x 18 }}" y="{{ add $y 20 }}" class="journey-date">{{ $start }}&#8202;&#8211;&#8202;{{ $end }}</text>
+    <text x="{{ add $x 90 }}" y="{{ add $y 20 }}" class="journey-date">{{ $p.Title }}</text>
+  {{ end }}
+</svg>
+{{ end }}

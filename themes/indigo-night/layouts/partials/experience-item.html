@@ -1,0 +1,26 @@
+<article class="relative pb-9 pl-8 tl-item">
+  {{ $start := time .Params.startDate }}
+  {{ $end := now }}{{ with .Params.endDate }}{{ $end = time . }}{{ end }}
+  {{ $months := add (mul (sub $end.Year $start.Year) 12) (sub (int ($end.Format "1")) (int ($start.Format "1"))) }}
+  {{ $yrs := div $months 12 }}{{ $mos := mod $months 12 }}
+  {{ $dur := "" }}
+  {{ if gt $yrs 0 }}{{ $dur = printf "%d yr%s" $yrs (cond (gt $yrs 1) "s" "") }}{{ end }}
+  {{ if gt $mos 0 }}{{ $dur = trim (printf "%s %d mo%s" $dur $mos (cond (gt $mos 1) "s" "")) " " }}{{ end }}
+  {{ if eq $dur "" }}{{ $dur = "1 mo" }}{{ end }}
+  <div class="font-mono text-xs" style="color:var(--accent)">
+    {{ .Params.startDate | time.Format "2006.01" }} - {{ with .Params.endDate }}{{ . | time.Format "2006.01" }}{{ else }}present{{ end }}<span style="color:var(--muted)"> · {{ $dur }}</span>
+  </div>
+  <h3 class="text-lg font-semibold mt-1.5" style="color:var(--heading)">
+    {{ .Title }} <span class="font-normal" style="color:var(--muted)">· {{ with .Params.website }}<a href="{{ . }}" class="no-underline" style="color:inherit">{{ $.Params.company }}</a>{{ else }}{{ .Params.company }}{{ end }}</span>
+  </h3>
+  {{ $meta := slice }}
+  {{ with .Params.location }}{{ $meta = $meta | append . }}{{ end }}
+  {{ with .Params.workMode }}{{ $meta = $meta | append . }}{{ end }}
+  {{ with .Params.employmentType }}{{ $meta = $meta | append . }}{{ end }}
+  {{ if $meta }}<div class="font-mono text-[11px] mt-1" style="color:var(--muted)">{{ delimit $meta " · " }}</div>{{ end }}
+  <div class="exp-body mt-2 text-[14.5px] leading-relaxed" style="color:var(--muted)">{{ .Content }}</div>
+  {{ if or .Params.skills .Params.softSkills }}<div class="flex gap-2 flex-wrap mt-3">
+    {{ range .Params.skills }}{{ $s := . }}{{ with index site.Taxonomies.skills (lower .) }}<a class="tag" href="{{ .Page.RelPermalink }}">{{ $s }}</a>{{ else }}<span class="tag">{{ $s }}</span>{{ end }}{{ end }}
+    {{ range .Params.softSkills }}<span class="tag-soft">{{ . }}</span>{{ end }}
+  </div>{{ end }}
+</article>

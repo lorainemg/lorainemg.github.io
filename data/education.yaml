@@ -1,0 +1,20 @@
+degree:
+  title: BSc. Computer Science
+  institution: University of Havana
+  location: Havana, Cuba
+  years: 2016-2021
+  gpa: 4.81 / 5
+  note: Member of the Artificial Intelligence research group, with publications, conferences and competitions.
+certifications:
+  - name: Associate Data Scientist in Python
+    issuer: DataCamp
+    year: 2022
+    url: "https://www.datacamp.com/completed/statement-of-accomplishment/track/bae4cef65b6940c1a73227d510d61ac0467e8b67"
+  # Loraine adds her other online-course certifications here (name, issuer, year, url)
+publications:
+  - name: "Detección de la negación y su ámbito en textos escritos en español"
+    url: "https://github.com/lorainemg/negation-detection/blob/main/docs/paper.pdf"
+  - name: "UH-MMM at eHealth-KD Challenge 2021"
+    url: "https://github.com/lorainemg/eHealthKD-competition/blob/main/docs/ehealth_paper4.pdf"
+  - name: "Una estrategia de Meta-Learning para flujos genéricos de AutoML"
+    url: "https://github.com/lorainemg/cnc-2022"

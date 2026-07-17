@@ -1,0 +1,20 @@
+<section id="skills" class="wrap pt-16 reveal">
+  <div class="flex items-baseline gap-4 mb-8">
+    <h2 class="font-display text-3xl font-bold" style="color:var(--heading)">Tools I work with</h2>
+    <div class="flex-1 h-px" style="background:var(--border)"></div>
+    <a class="text-sm no-underline" style="color:var(--accent)" href="/skills/">All skills →</a>
+  </div>
+  {{ range site.Data.skills }}
+  <p class="eyebrow mt-6 mb-3">{{ upper .group }}</p>
+  <div class="flex gap-2.5 flex-wrap">
+    {{ range .items }}
+      {{ $s := . }}
+      {{ with index site.Taxonomies.skills (lower .) }}
+        <a class="chip" href="{{ .Page.RelPermalink }}">{{ $s }}</a>
+      {{ else }}
+        <span class="chip" style="opacity:.6">{{ $s }}</span>
+      {{ end }}
+    {{ end }}
+  </div>
+  {{ end }}
+</section>

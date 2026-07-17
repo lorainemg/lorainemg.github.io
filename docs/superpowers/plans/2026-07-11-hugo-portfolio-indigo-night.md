@@ -873,7 +873,7 @@ Expected: FAIL.
 - group: Backend & Data
   items: [FastAPI, Flask, Django, SQLAlchemy, PostgreSQL, MySQL, Redis, Pandas]
 - group: Machine Learning
-  items: [Scikit-Learn, TensorFlow, Keras, NumPy, NLTK, spaCy]
+  items: [Scikit-Learn, TensorFlow, Keras, NumPy, NLP, spaCy]
 - group: Frontend
   items: [Vue, Svelte, TailwindCSS]
 - group: DevOps & Cloud

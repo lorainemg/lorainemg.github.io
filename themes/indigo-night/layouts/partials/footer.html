@@ -1,0 +1,8 @@
+<footer class="wrap flex flex-wrap justify-between gap-3 py-8 mt-20 text-sm" style="border-top:1px solid var(--border); color:var(--muted)">
+  <span>© {{ now.Year }} {{ site.Title }}</span>
+  <span class="flex gap-4">
+    {{ with site.Params.social.github }}<a style="color:var(--accent)" class="no-underline" href="{{ . }}">GitHub</a>{{ end }}
+    {{ with site.Params.social.linkedin }}<a style="color:var(--accent)" class="no-underline" href="{{ . }}">LinkedIn</a>{{ end }}
+    {{ with site.Params.social.email }}<a style="color:var(--accent)" class="no-underline" href="mailto:{{ . }}">Email</a>{{ end }}
+  </span>
+</footer>
