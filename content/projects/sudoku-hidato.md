@@ -5,7 +5,7 @@ category: algorithms
 skills: [Haskell, Functional Programming, Backtracking, Constraint Solving]
 github: https://github.com/lorainemg/Sudoku-Hidato
 featured: false
-weight: 10
+weight: 15
 ---
 
 Hidato is a logic puzzle where you fill a grid with consecutive numbers so

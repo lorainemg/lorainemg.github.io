@@ -5,7 +5,7 @@ category: misc
 skills: [Python, Blockchain, Cryptographic Hashing, Data Structures]
 github: https://github.com/lorainemg/chat-block
 featured: false
-weight: 20
+weight: 27
 ---
 
 A small experiment answering a simple question: what if a chat's history

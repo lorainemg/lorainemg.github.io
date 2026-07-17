@@ -13,8 +13,8 @@ certifications:
   # Loraine adds her other online-course certifications here (name, issuer, year, url)
 publications:
   - name: "Detección de la negación y su ámbito en textos escritos en español"
-    url: ""
+    url: "https://github.com/lorainemg/negation-detection/blob/main/docs/paper.pdf"
   - name: "UH-MMM at eHealth-KD Challenge 2021"
     url: "https://github.com/lorainemg/eHealthKD-competition/blob/main/docs/ehealth_paper4.pdf"
   - name: "Una estrategia de Meta-Learning para flujos genéricos de AutoML"
-    url: ""
+    url: "https://github.com/lorainemg/cnc-2022"

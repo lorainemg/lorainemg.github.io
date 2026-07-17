@@ -5,7 +5,7 @@ category: data-science
 skills: [R, Statistics, Hypothesis Testing, Regression, PCA, Clustering, ANOVA]
 github: https://github.com/lorainemg/Household-Analysis
 featured: false
-weight: 15
+weight: 21
 ---
 
 A statistical deep-dive into the Individual Household Electric Power

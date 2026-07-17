@@ -5,7 +5,7 @@ category: systems
 skills: [Python, Discrete-Event Simulation, Probability, Statistics, Modeling]
 github: https://github.com/lorainemg/discrete-event-simulation
 featured: false
-weight: 9
+weight: 13
 ---
 
 How much of the time do an airport's runways actually sit empty? This project

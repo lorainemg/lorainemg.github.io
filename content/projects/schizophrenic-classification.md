@@ -5,7 +5,7 @@ category: ml
 skills: [Python, Signal Processing, Wavelets, SVM, EEG, Machine Learning]
 github: https://github.com/lorainemg/schizophrenic-classification
 featured: false
-weight: 11
+weight: 16
 ---
 
 Can a machine learning model tell a schizophrenic patient from a healthy

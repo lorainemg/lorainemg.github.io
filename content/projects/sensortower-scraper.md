@@ -5,7 +5,7 @@ category: data-engineering
 skills: [Python, Web Scraping, REST APIs, JSON, Data Collection]
 github: https://github.com/lorainemg/sensortower-scraper
 featured: false
-weight: 17
+weight: 23
 ---
 
 A tool for collecting mobile app market data from SensorTower, the industry

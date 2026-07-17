@@ -2,10 +2,10 @@
 title: Vimasm, A Text Editor in Pure Assembly
 description: "A Vim-like text editor written entirely in x86 assembly that boots directly on the hardware: no operating system, no libraries, just the keyboard, the screen, and the code in between."
 category: systems
-skills: [Assembly (NASM), x86, Low-Level Programming, Operating Systems, Bare Metal]
+skills: [x86 Assembly, NASM, Low-Level Programming, Operating Systems, Bare Metal]
 github: https://github.com/lorainemg/vimasm
 featured: true
-weight: 5
+weight: 7
 ---
 
 A recreation of Vim's core editing experience built with no safety net at

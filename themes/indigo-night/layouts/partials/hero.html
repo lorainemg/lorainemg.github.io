@@ -30,7 +30,10 @@
 </section>
 <div class="wrap flex flex-wrap gap-12 py-6" style="border-top:1px solid var(--border); border-bottom:1px solid var(--border)">
   {{ range site.Data.stats }}
-  <div><b class="font-display text-2xl block" style="color:var(--heading)">{{ .value }}</b>
+  {{ $value := .value }}
+  {{ if eq .count "projects" }}{{ $value = len (where site.RegularPages "Section" "projects") }}{{ end }}
+  {{ if eq .count "skills" }}{{ $n := 0 }}{{ range site.Data.skills }}{{ $n = add $n (len .items) }}{{ end }}{{ $value = printf "%d+" $n }}{{ end }}
+  <div><b class="font-display text-2xl block" style="color:var(--heading)">{{ $value }}</b>
   <span class="text-[13px]" style="color:var(--muted)">{{ .label }}</span></div>
   {{ end }}
 </div>

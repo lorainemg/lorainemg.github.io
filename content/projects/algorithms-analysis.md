@@ -4,7 +4,7 @@ description: "Solutions to four algorithmic optimization problems, each solved w
 category: algorithms
 skills: [Python, Dynamic Programming, Backtracking, Divide and Conquer, Greedy Algorithms, Complexity Analysis]
 github: https://github.com/lorainemg/daa
-weight: 12
+weight: 17
 ---
 
 A collection of four algorithmic optimization problems solved from scratch,

@@ -5,8 +5,7 @@ category: systems
 skills: [Python, NumPy, Operating Systems, Scheduling Algorithms, Simulation]
 github: https://github.com/lorainemg/scheduler
 featured: false
-featured: false 
-weight: 13
+weight: 18
 ---
 
 A simulator that answers a core operating systems question: given many jobs

@@ -5,7 +5,7 @@ category: ai
 skills: [Python, Fuzzy Logic, Inference Systems, Control Systems]
 github: https://github.com/lorainemg/fuzzy-inference-system
 featured: false
-weight: 16
+weight: 22
 ---
 
 Classical logic forces every statement to be true or false, but human

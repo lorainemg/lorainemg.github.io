@@ -7,13 +7,13 @@ theme = "indigo-night"
   skill = "skills"
 
 [params]
-  tagline = "Software Engineer specializing in FullStack development, Machine Learning and Data Analysis."
+  tagline = "Fullstack engineer with a machine learning background, building products end to end."
   location = "Tampa, Florida"
   cvPath = ""   # set to e.g. "files/loraine-monteagudo-cv.pdf" when the PDF exists
   [params.hero]
     eyebrow = "// fullstack engineer · machine learning"
-    headline = "I build systems that track, *learn* and ship."   # *word* gets the gradient
-    intro = "I'm **Loraine Monteagudo**, a software engineer working across **Python backends**, **Vue & Svelte frontends**, **ML models**, and **Data Analysis**."
+    headline = "I build the *whole* product."   # *word* gets the gradient
+    intro = "I'm **Loraine Monteagudo**, a fullstack engineer with a machine learning background. I take products from idea to production: the interface, the API, the data pipelines, and the infrastructure they run on."
   [params.social]
     github = "https://github.com/lorainemg"
     linkedin = "https://www.linkedin.com/in/lorainemg"

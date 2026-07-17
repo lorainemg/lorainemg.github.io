@@ -4,7 +4,7 @@ description: "A web application that automates enrollment for the University of 
 category: web
 skills: [Python, Django, SQLite, HTML, CSS, JavaScript]
 featured: false
-weight: 6
+weight: 11
 ---
 
 The University of Havana's distance education programs received over 3,000
