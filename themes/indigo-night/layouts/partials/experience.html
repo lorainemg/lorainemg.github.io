@@ -3,7 +3,7 @@
 {{ $past := where $roles "Params.endDate" "ne" nil }}
 <section id="experience" class="wrap pt-16 reveal">
   <div class="flex items-baseline gap-4 mb-8">
-    <h2 class="font-display text-3xl font-bold" style="color:var(--heading)">Experience</h2>
+    <h2 class="font-display text-3xl font-bold" style="color:var(--heading)">{{ T "section_experience" }}</h2>
     <div class="flex-1 h-px" style="background:var(--border)"></div>
   </div>
   <div class="ml-1.5" style="border-left:2px solid var(--border)">
