@@ -87,6 +87,9 @@ other = "Category"
 [source_link]
 other = "Source ↗"
 
+[github_card_link]
+other = "github ↗"
+
 [prev]
 other = "← prev"
 

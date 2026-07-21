@@ -1,7 +1,7 @@
 <article class="card relative flex flex-col" data-category="{{ .Params.category }}">
   <div class="flex justify-between items-center mb-3.5">
     <span class="eyebrow">{{ replace (upper .Params.category) "-" " · " }}</span>
-    {{ with .Params.github }}<a class="relative z-10 text-xs no-underline" style="color:var(--muted)" href="{{ . }}">github ↗</a>{{ end }}
+    {{ with .Params.github }}<a class="relative z-10 text-xs no-underline" style="color:var(--muted)" href="{{ . }}">{{ T "github_card_link" }}</a>{{ end }}
   </div>
   <h3 class="font-semibold" style="color:var(--heading)"><a class="card-link no-underline" style="color:inherit" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
   <p class="text-sm mt-2 flex-1" style="color:var(--muted)">{{ .Description }}</p>
