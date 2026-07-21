@@ -20,3 +20,20 @@
     {{ end }}
   {{ end }}
 {{ end }}
+{{ with site.Params.accentColor }}
+{{ $c := . | safeCSS }}
+<style>
+  html[data-theme="dark"] {
+    --accent: {{ $c }};
+    --accent-deep: oklch(from {{ $c }} calc(l - 0.17) calc(c * 1.4) h);
+    --accent-hover: oklch(from {{ $c }} calc(l - 0.10) calc(c * 1.25) h);
+    --violet: oklch(from {{ $c }} calc(l + 0.08) calc(c * 0.85) calc(h + 25));
+  }
+  html[data-theme="light"] {
+    --accent: oklch(from {{ $c }} calc(l - 0.17) calc(c * 1.4) h);
+    --accent-deep: oklch(from {{ $c }} calc(l - 0.17) calc(c * 1.4) h);
+    --accent-hover: oklch(from {{ $c }} calc(l - 0.10) calc(c * 1.25) h);
+    --violet: oklch(from {{ $c }} calc(l - 0.05) c calc(h + 25));
+  }
+</style>
+{{ end }}
