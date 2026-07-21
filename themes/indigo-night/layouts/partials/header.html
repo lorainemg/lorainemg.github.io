@@ -5,7 +5,8 @@
     {{ if where site.RegularPages "Section" "experience" }}<a class="no-underline font-medium" style="color:var(--muted)" href="{{ site.Home.RelPermalink }}#experience">{{ T "nav_experience" }}</a>{{ end }}
     {{ with site.GetPage "/projects" }}{{ if .RegularPages }}<a class="no-underline font-medium" style="color:var(--muted)" href="{{ .RelPermalink }}">{{ T "nav_projects" }}</a>{{ end }}{{ end }}
     {{ if site.Data.skills }}<a class="no-underline font-medium" style="color:var(--muted)" href="{{ site.Home.RelPermalink }}#skills">{{ T "nav_skills" }}</a>{{ end }}
-    {{ if or site.Data.education site.Data.achievements }}<a class="no-underline font-medium" style="color:var(--muted)" href="{{ site.Home.RelPermalink }}#education">{{ T "nav_education" }}</a>{{ end }}
+    {{ $edu := site.Data.education | default dict }}
+    {{ if or $edu.degree $edu.certifications $edu.publications site.Data.achievements }}<a class="no-underline font-medium" style="color:var(--muted)" href="{{ site.Home.RelPermalink }}#education">{{ T "nav_education" }}</a>{{ end }}
     {{ with site.Params.cvPath }}<a class="btn-solid" href="{{ . | relURL }}" download>{{ T "download_cv" }}</a>{{ end }}
     <button id="theme-toggle" aria-label="{{ T "toggle_theme" }}" aria-pressed="false" class="chip cursor-pointer">◐</button>
   </nav>
