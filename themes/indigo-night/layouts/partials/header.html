@@ -1,12 +1,12 @@
+{{ $logo := site.Params.logoText | default (lower (index (split site.Title " ") 0)) }}
 <header class="wrap flex items-center justify-between py-6">
-  {{ $logo := site.Params.logoText | default (lower (index (split site.Title " ") 0)) }}
-  <a href="/" class="font-display font-bold text-lg no-underline" style="color:var(--heading)">{{ $logo }}<span style="color:var(--accent)">.</span></a>
+  <a href="{{ site.Home.RelPermalink }}" class="font-display font-bold text-lg no-underline" style="color:var(--heading)">{{ $logo }}<span style="color:var(--accent)">.</span></a>
   <nav class="flex items-center gap-6 text-sm">
-    <a class="no-underline font-medium" style="color:var(--muted)" href="/#experience">{{ T "nav_experience" }}</a>
-    <a class="no-underline font-medium" style="color:var(--muted)" href="/projects/">{{ T "nav_projects" }}</a>
-    <a class="no-underline font-medium" style="color:var(--muted)" href="/#skills">{{ T "nav_skills" }}</a>
-    <a class="no-underline font-medium" style="color:var(--muted)" href="/#education">{{ T "nav_education" }}</a>
-    {{ with site.Params.cvPath }}<a class="btn-solid" href="/{{ . }}" download>{{ T "download_cv" }}</a>{{ end }}
+    {{ if where site.RegularPages "Section" "experience" }}<a class="no-underline font-medium" style="color:var(--muted)" href="{{ site.Home.RelPermalink }}#experience">{{ T "nav_experience" }}</a>{{ end }}
+    {{ with site.GetPage "/projects" }}{{ if .RegularPages }}<a class="no-underline font-medium" style="color:var(--muted)" href="{{ .RelPermalink }}">{{ T "nav_projects" }}</a>{{ end }}{{ end }}
+    {{ if site.Data.skills }}<a class="no-underline font-medium" style="color:var(--muted)" href="{{ site.Home.RelPermalink }}#skills">{{ T "nav_skills" }}</a>{{ end }}
+    {{ if or site.Data.education site.Data.achievements }}<a class="no-underline font-medium" style="color:var(--muted)" href="{{ site.Home.RelPermalink }}#education">{{ T "nav_education" }}</a>{{ end }}
+    {{ with site.Params.cvPath }}<a class="btn-solid" href="{{ . | relURL }}" download>{{ T "download_cv" }}</a>{{ end }}
     <button id="theme-toggle" aria-label="{{ T "toggle_theme" }}" aria-pressed="false" class="chip cursor-pointer">◐</button>
   </nav>
 </header>

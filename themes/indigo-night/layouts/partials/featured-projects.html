@@ -1,11 +1,14 @@
-{{ $featured := where (where site.RegularPages "Section" "projects") "Params.featured" true }}
+{{ $projects := where site.RegularPages "Section" "projects" }}
+{{ $featured := where $projects "Params.featured" true }}
+{{ if $featured }}
 <section class="wrap pt-16 reveal">
   <div class="flex items-baseline gap-4 mb-8">
     <h2 class="font-display text-3xl font-bold" style="color:var(--heading)">{{ T "section_featured_projects" }}</h2>
     <div class="flex-1 h-px" style="background:var(--border)"></div>
-    <a class="text-sm no-underline" style="color:var(--accent)" href="/projects/">{{ T "all_projects" (dict "Count" (len (where site.RegularPages "Section" "projects"))) }}</a>
+    {{ with site.GetPage "/projects" }}<a class="text-sm no-underline" style="color:var(--accent)" href="{{ .RelPermalink }}">{{ T "all_projects" (dict "Count" (len $projects)) }}</a>{{ end }}
   </div>
   <div class="grid gap-4" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
     {{ range $featured.ByWeight }}{{ partial "project-card.html" . }}{{ end }}
   </div>
 </section>
+{{ end }}
