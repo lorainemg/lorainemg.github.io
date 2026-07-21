@@ -1,5 +1,6 @@
 <header class="wrap flex items-center justify-between py-6">
-  <a href="/" class="font-display font-bold text-lg no-underline" style="color:var(--heading)">loraine<span style="color:var(--accent)">.</span></a>
+  {{ $logo := site.Params.logoText | default (lower (index (split site.Title " ") 0)) }}
+  <a href="/" class="font-display font-bold text-lg no-underline" style="color:var(--heading)">{{ $logo }}<span style="color:var(--accent)">.</span></a>
   <nav class="flex items-center gap-6 text-sm">
     <a class="no-underline font-medium" style="color:var(--muted)" href="/#experience">Experience</a>
     <a class="no-underline font-medium" style="color:var(--muted)" href="/projects/">Projects</a>
