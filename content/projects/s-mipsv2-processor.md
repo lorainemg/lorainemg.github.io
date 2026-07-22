@@ -9,22 +9,22 @@ weight: 14
 ---
 
 A complete 32-bit processor implementing the S-MIPSv2 instruction set
-(Simplified MIPS), designed entirely in Logisim, the digital logic
-simulator. The CPU has 32 general-purpose registers (with R0 hardwired to
-zero and R31 as the stack pointer), Hi/Lo registers for multiplication
-and division results, and plugs into a fixed memory board used for
-grading, so the whole design lives in the processor itself.
+(Simplified MIPS), designed wholly in Logisim, the digital logic
+simulator. The CPU has 32 general-purpose registers (R0 hardwired to
+zero, R31 the stack pointer), Hi/Lo registers for multiplication and
+division results, and plugs into a fixed memory board used for grading,
+so the whole design lives in the processor itself.
 
 The datapath is built from named subcircuits: instruction fetcher and
 program counter, decoder, register file, ALU, and control unit, plus
 separate instruction and data caches backed by RAM, with a wait circuit
 to stall the processor during memory access. Every piece is wired from
-Logisim primitives — no black boxes.
+Logisim primitives, with no black boxes.
 
-The processor is verified by running hand-written assembly programs on
-it: arithmetic and signed/unsigned multiplication and division, memory
-loads and stores, stack push/pop, branching, and interactive programs
-that read the keyboard and print to a TTY. A companion Python script
-parses the circuit file and computes the hardware "cost" of the design,
-pricing every gate, multiplexer, and RAM block, because in this course a
-working CPU wasn't enough; it had to be a cheap one.
+Hand-written assembly programs verify the processor: arithmetic and
+signed/unsigned multiplication and division, memory loads and stores,
+stack push and pop, branching, and interactive programs that read the
+keyboard and print to a TTY. A companion Python script parses the circuit
+file and computes the hardware "cost" of the design, pricing every gate,
+multiplexer, and RAM block, because in this course a working CPU was not
+enough; it had to be cheap.

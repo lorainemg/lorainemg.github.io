@@ -14,25 +14,25 @@ weight: 1
 ---
 
 A machine learning system that reads Spanish medical text and extracts
-structured knowledge from it: the medical concepts mentioned and how they
-relate to each other. Built as the UH-MMM team's submission to the eHealth-KD
-Challenge at IberLEF 2021, an international research competition, where it
-ranked 5th overall in the main evaluation scenario.
+structured knowledge: the medical concepts mentioned and how they relate.
+Built as the UH-MMM team's entry in the eHealth-KD Challenge at IberLEF
+2021, an international research competition, where it ranked 5th overall
+in the main evaluation scenario.
 
-The challenge combines two subtasks. First, Named Entity Recognition finds
-and classifies the relevant entities in each sentence (concepts, actions,
-predicates, references). Then, Relation Extraction detects the semantic
-relations between them, turning free-form text into a small knowledge graph.
+The challenge has two subtasks. First, Named Entity Recognition finds and
+classifies the entities in each sentence (concepts, actions, predicates,
+references). Then Relation Extraction detects the semantic relations
+between them, turning free text into a small knowledge graph.
 
-Both tasks share a common neural architecture: BiLSTM layers act as
-contextual encoders, with Dense layers decoding the output tags. The models
-combine word-level embeddings (FastText embeddings trained on Spanish medical
-text) with character-level representations, which helps them handle the rare
-and unseen words common in the medical domain. The entity
-multi-task learning, predicting part-of-speech tags along
-improve its grasp of sentence structure.
+Both tasks share one neural architecture: BiLSTM layers encode context,
+and Dense layers decode the output tags. The models join word-level
+embeddings (FastText, trained on Spanish medical text) with
+character-level representations, which helps with the rare and unseen
+words common in medical text. The entity model also uses multi-task
+learning, predicting part-of-speech tags alongside entity tags to improve
+its grasp of sentence structure.
 
-The pipeline was built with TensorFlow and Keras, with sp
-text preprocessing, and includes the full workflow from t
-challenge data to the submission format. The approach is
-team's workshop paper linked above.
+The pipeline is built with TensorFlow and Keras, with spaCy and NLTK for
+text preprocessing, and covers the full path from raw challenge data to
+the submission format. The team's workshop paper linked above describes
+the approach.
