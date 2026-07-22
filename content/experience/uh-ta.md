@@ -11,5 +11,5 @@ skills: [C#]
 softSkills: [Mentoring]
 ---
 
-- Assisted in teaching Logic over 3 semesters, leading practice sessions and helping students work through difficult concepts.
-- Helped to prepare and grade exams, ensuring fair assessment and giving students timely, useful feedback on their work.
+- Helped teach Logic over 3 semesters, leading practice sessions and guiding students through hard concepts.
+- Helped prepare and grade exams, keeping grading fair and feedback timely and useful.

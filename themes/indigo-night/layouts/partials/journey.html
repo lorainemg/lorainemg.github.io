@@ -18,7 +18,7 @@
     {{ $mine := where $roles "Params.company" $p.Params.company }}
     {{ $earliest := index $mine (sub (len $mine) 1) }}
     {{ $start := printf "%.4s" (printf "%v" $earliest.Params.startDate) }}
-    {{ $end := "now" }}{{ with $p.Params.endDate }}{{ $end = printf "%.4s" (printf "%v" .) }}{{ end }}
+    {{ $end := T "now" }}{{ with $p.Params.endDate }}{{ $end = printf "%.4s" (printf "%v" .) }}{{ end }}
     <text x="{{ add $x 18 }}" y="{{ add $y 20 }}" class="journey-date">{{ $start }}&#8202;&#8211;&#8202;{{ $end }}</text>
     <text x="{{ add $x 90 }}" y="{{ add $y 20 }}" class="journey-date">{{ $p.Title }}</text>
   {{ end }}

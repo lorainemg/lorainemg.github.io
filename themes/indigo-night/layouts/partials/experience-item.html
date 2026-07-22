@@ -4,11 +4,11 @@
   {{ $months := add (mul (sub $end.Year $start.Year) 12) (sub (int ($end.Format "1")) (int ($start.Format "1"))) }}
   {{ $yrs := div $months 12 }}{{ $mos := mod $months 12 }}
   {{ $dur := "" }}
-  {{ if gt $yrs 0 }}{{ $dur = printf "%d yr%s" $yrs (cond (gt $yrs 1) "s" "") }}{{ end }}
-  {{ if gt $mos 0 }}{{ $dur = trim (printf "%s %d mo%s" $dur $mos (cond (gt $mos 1) "s" "")) " " }}{{ end }}
-  {{ if eq $dur "" }}{{ $dur = "1 mo" }}{{ end }}
+  {{ if gt $yrs 0 }}{{ $dur = printf "%d %s" $yrs (T "yr" $yrs) }}{{ end }}
+  {{ if gt $mos 0 }}{{ $dur = trim (printf "%s %d %s" $dur $mos (T "mo" $mos)) " " }}{{ end }}
+  {{ if eq $dur "" }}{{ $dur = printf "1 %s" (T "mo" 1) }}{{ end }}
   <div class="font-mono text-xs" style="color:var(--accent)">
-    {{ .Params.startDate | time.Format "2006.01" }} - {{ with .Params.endDate }}{{ . | time.Format "2006.01" }}{{ else }}present{{ end }}<span style="color:var(--muted)"> · {{ $dur }}</span>
+    {{ .Params.startDate | time.Format "2006.01" }} - {{ with .Params.endDate }}{{ . | time.Format "2006.01" }}{{ else }}{{ T "present" }}{{ end }}<span style="color:var(--muted)"> · {{ $dur }}</span>
   </div>
   <h3 class="text-lg font-semibold mt-1.5" style="color:var(--heading)">
     {{ .Title }} <span class="font-normal" style="color:var(--muted)">· {{ with .Params.website }}<a href="{{ . }}" class="no-underline" style="color:inherit">{{ $.Params.company }}</a>{{ else }}{{ .Params.company }}{{ end }}</span>

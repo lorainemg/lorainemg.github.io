@@ -1,4 +1,13 @@
 name = "Indigo Night"
 license = "MIT"
+licenselink = "https://github.com/lorainemg/portfolio/blob/main/themes/indigo-night/LICENSE"
 description = "Dark indigo editor-theme portfolio for developers. Skills taxonomy links roles and projects."
+homepage = "https://github.com/lorainemg/portfolio"
+demosite = "https://lorainemg.github.io/"
+tags = ["portfolio", "personal", "dark", "light", "responsive", "tailwind", "taxonomy"]
+features = ["dark mode", "light mode", "skills taxonomy", "custom accent color", "i18n", "project filtering"]
 min_version = "0.148.0"
+
+[author]
+  name = "Loraine Monteagudo"
+  homepage = "https://github.com/lorainemg"

@@ -7,21 +7,19 @@ github: https://github.com/lorainemg/information-retrieval-system
 weight: 19
 ---
 
-A search engine implemented from first principles: given a query, it finds
-and ranks the most relevant documents in a collection, the core problem
-behind every search box.
+A search engine built from first principles: given a query, it finds and
+ranks the most relevant documents in a collection, the core problem behind
+every search box.
 
-The system is built on the vector space model. Documents and queries are
-preprocessed with NLP techniques and converted into weighted term vectors,
-and relevance is computed as similarity between them, producing a ranked
-result list. On top of the core model, the system clusters the document
-collection to group related content, and includes a web crawler for
-gathering new documents to index.
+The system rests on the vector space model. It preprocesses documents and
+queries with NLP techniques, converts them into weighted term vectors, and
+computes relevance as similarity between them, producing a ranked result
+list. On top of that, it clusters the document collection to group related
+content and includes a web crawler for gathering new documents to index.
 
-Rather than trusting that it "seems to work", the system is evaluated the way
-IR research does it: against standard test collections with known relevance
-judgments, measuring retrieval quality with objective metrics across
-different corpora.
+Rather than trust that it "seems to work", the evaluation follows IR
+research practice: standard test collections with known relevance
+judgments, objective retrieval metrics, and several corpora.
 
-Implemented in Python with a Streamlit interface for running queries and
+Written in Python with a Streamlit interface for running queries and
 exploring results, and a full written report on the design and evaluation.

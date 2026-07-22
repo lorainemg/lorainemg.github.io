@@ -1,13 +1,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ if .IsHome }}{{ site.Title }} · {{ site.Params.tagline }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
-<meta name="description" content="{{ .Description | default site.Params.tagline }}">
+<title>{{ if .IsHome }}{{ site.Title }}{{ with site.Params.tagline }} · {{ . }}{{ end }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+{{ with .Description | default site.Params.tagline }}<meta name="description" content="{{ . }}">{{ end }}
 <script>
   (function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t);document.documentElement.classList.add("js");})();
 </script>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/space-grotesk-v22-latin-700.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-v20-latin-regular.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/jetbrains-mono-v24-latin-regular.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="{{ "fonts/space-grotesk-v22-latin-700.woff2" | relURL }}">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="{{ "fonts/inter-v20-latin-regular.woff2" | relURL }}">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="{{ "fonts/jetbrains-mono-v24-latin-regular.woff2" | relURL }}">
 {{ with resources.Get "css/main.css" }}
   {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
   {{ with . | css.TailwindCSS $opts }}
@@ -19,4 +19,21 @@
       {{ end }}
     {{ end }}
   {{ end }}
+{{ end }}
+{{ with site.Params.accentColor }}
+{{ $c := . | safeCSS }}
+<style>
+  html[data-theme="dark"] {
+    --accent: {{ $c }};
+    --accent-deep: oklch(from {{ $c }} calc(l - 0.17) calc(c * 1.4) h);
+    --accent-hover: oklch(from {{ $c }} calc(l - 0.10) calc(c * 1.25) h);
+    --violet: oklch(from {{ $c }} calc(l + 0.08) calc(c * 0.85) calc(h + 25));
+  }
+  html[data-theme="light"] {
+    --accent: oklch(from {{ $c }} calc(l - 0.17) calc(c * 1.4) h);
+    --accent-deep: oklch(from {{ $c }} calc(l - 0.17) calc(c * 1.4) h);
+    --accent-hover: oklch(from {{ $c }} calc(l - 0.10) calc(c * 1.25) h);
+    --violet: oklch(from {{ $c }} calc(l - 0.05) c calc(h + 25));
+  }
+</style>
 {{ end }}

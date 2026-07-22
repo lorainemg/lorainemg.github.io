@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="wrap">
-  <header class="pt-14 pb-8"><h1 class="font-display font-bold text-5xl tracking-tight" style="color:var(--heading)">Skills</h1></header>
+  <header class="pt-14 pb-8"><h1 class="font-display font-bold text-5xl tracking-tight" style="color:var(--heading)">{{ T "skills_title" }}</h1></header>
   <div class="flex gap-2.5 flex-wrap pb-20">
     {{ range .Data.Terms.Alphabetical }}
     <a class="chip" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span style="color:var(--muted)">({{ .Count }})</span></a>

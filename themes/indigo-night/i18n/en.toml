@@ -1,0 +1,112 @@
+[nav_experience]
+other = "Experience"
+
+[nav_projects]
+other = "Projects"
+
+[nav_skills]
+other = "Skills"
+
+[nav_education]
+other = "Education"
+
+[download_cv]
+other = "Download CV"
+
+[toggle_theme]
+other = "Toggle color theme"
+
+[section_experience]
+other = "Experience"
+
+[section_featured_projects]
+other = "Featured projects"
+
+[all_projects]
+other = "All {{ .Count }} →"
+
+[section_skills]
+other = "Tools I work with"
+
+[all_skills]
+other = "All skills →"
+
+[section_education]
+other = "Education & achievements"
+
+[certifications]
+other = "CERTIFICATIONS"
+
+[publications]
+other = "PUBLICATIONS"
+
+[achievements]
+other = "ACHIEVEMENTS"
+
+[gpa]
+other = "GPA"
+
+[present]
+other = "present"
+
+[now]
+other = "now"
+
+[yr]
+one = "yr"
+other = "yrs"
+
+[mo]
+one = "mo"
+other = "mos"
+
+[email]
+other = "Email"
+
+[github]
+other = "GitHub"
+
+[linkedin]
+other = "LinkedIn"
+
+[view_on_github]
+other = "View on GitHub"
+
+[facts]
+other = "FACTS"
+
+[stack]
+other = "STACK"
+
+[links]
+other = "LINKS"
+
+[category]
+other = "Category"
+
+[source_link]
+other = "Source ↗"
+
+[github_card_link]
+other = "github ↗"
+
+[prev]
+other = "← prev"
+
+[next]
+other = "next →"
+
+[skills_title]
+other = "Skills"
+
+[where_used]
+other = "Where I've used it:"
+
+[experience_heading]
+other = "EXPERIENCE"
+
+[projects_heading]
+other = "PROJECTS"
+
+[filter_all]
+other = "all"

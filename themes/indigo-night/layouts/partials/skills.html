@@ -1,10 +1,11 @@
+{{ with site.Data.skills }}
 <section id="skills" class="wrap pt-16 reveal">
   <div class="flex items-baseline gap-4 mb-8">
-    <h2 class="font-display text-3xl font-bold" style="color:var(--heading)">Tools I work with</h2>
+    <h2 class="font-display text-3xl font-bold" style="color:var(--heading)">{{ T "section_skills" }}</h2>
     <div class="flex-1 h-px" style="background:var(--border)"></div>
-    <a class="text-sm no-underline" style="color:var(--accent)" href="/skills/">All skills →</a>
+    {{ with site.GetPage "/skills" }}<a class="text-sm no-underline" style="color:var(--accent)" href="{{ .RelPermalink }}">{{ T "all_skills" }}</a>{{ end }}
   </div>
-  {{ range site.Data.skills }}
+  {{ range . }}
   <p class="eyebrow mt-6 mb-3">{{ upper .group }}</p>
   <div class="flex gap-2.5 flex-wrap">
     {{ range .items }}
@@ -18,3 +19,4 @@
   </div>
   {{ end }}
 </section>
+{{ end }}

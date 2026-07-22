@@ -10,6 +10,6 @@ endDate: 2021-12-01
 skills: [Python, Scikit-Learn, Pandas, Git, spaCy, NLP, NumPy, TensorFlow, Keras, Jupyter Notebooks]
 ---
 
-- Conducted research in natural language processing focused on extracting structured knowledge from medical text, contributing to the creation of annotated corpora used in the IberLEF eHealth international research challenges.
-- Competed in the IberLEF eHealth Knowledge Discovery Challenge 2021, achieving notable results against international teams.
-- Presented research at the XVI COMPUMAT 2019 International Congress, and won awards at school and national Student Congresses across multiple years.
+- Researched natural language processing, extracting structured knowledge from medical text and helping build the annotated corpora used in the international IberLEF eHealth challenges.
+- Competed in the IberLEF eHealth Knowledge Discovery Challenge 2021 with strong results against international teams.
+- Presented research at the XVI COMPUMAT 2019 International Congress and won awards at school and national Student Congresses across several years.
