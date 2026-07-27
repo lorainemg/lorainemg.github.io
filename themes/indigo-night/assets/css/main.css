@@ -23,7 +23,7 @@
   --accent:#818cf8; --accent-deep:#4f46e5; --accent-hover:#6366f1; --violet:#bb9af7;
 }
 html[data-theme="light"] {
-  --bg:#f6f7fb; --surface:#ffffff; --border:#e3e6f0;
+  --bg:#eceef6; --surface:#f7f8fc; --border:#d8dbe9;
   --text:#1e2135; --heading:#0d0e18; --muted:#5b6183;
   --accent:#4f46e5; --accent-deep:#4f46e5; --accent-hover:#6366f1; --violet:#7c5cd6;
 }
