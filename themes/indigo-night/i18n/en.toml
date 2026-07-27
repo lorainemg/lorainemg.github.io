@@ -10,6 +10,9 @@ other = "Skills"
 [nav_education]
 other = "Education"
 
+[toc_label]
+other = "On this page"
+
 [download_cv]
 other = "Download CV"
 

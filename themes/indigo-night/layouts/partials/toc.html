@@ -1,0 +1,15 @@
+{{ $entries := slice }}
+{{ if where site.RegularPages "Section" "experience" }}{{ $entries = $entries | append (dict "id" "experience" "label" (T "nav_experience")) }}{{ end }}
+{{ if where (where site.RegularPages "Section" "projects") "Params.featured" true }}{{ $entries = $entries | append (dict "id" "projects" "label" (T "nav_projects")) }}{{ end }}
+{{ if site.Data.skills }}{{ $entries = $entries | append (dict "id" "skills" "label" (T "nav_skills")) }}{{ end }}
+{{ $edu := site.Data.education | default dict }}
+{{ if or $edu.degree $edu.certifications $edu.publications site.Data.achievements }}{{ $entries = $entries | append (dict "id" "education" "label" (T "nav_education")) }}{{ end }}
+{{ if ge (len $entries) 2 }}
+<nav id="toc" class="toc" aria-label="{{ T "toc_label" }}">
+  <p class="toc-label">{{ T "toc_label" }}</p>
+  <ul>
+    {{ range $entries }}<li><a href="#{{ .id }}">{{ .label }}</a></li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}
