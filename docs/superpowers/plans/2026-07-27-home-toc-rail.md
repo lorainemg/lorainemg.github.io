@@ -4,7 +4,7 @@
 
 **Goal:** Replace the header's in-page anchor links with a sticky, scroll-spy table-of-contents rail on the home page.
 
-**Architecture:** A new `toc.html` partial renders a fixed left-edge rail on the home page only, with entries gated by the same data conditions that render each section. A small IntersectionObserver script highlights the section in view. The header keeps only real destinations (Projects page, CV, theme toggle).
+**Architecture:** A new `toc.html` partial renders a fixed right-edge rail on the home page only, with entries gated by the same data conditions that render each section. A small IntersectionObserver script highlights the section in view. The header keeps only real destinations (Projects page, CV, theme toggle).
 
 **Tech Stack:** Hugo templates, Tailwind CSS v4 (via `css.TailwindCSS`), vanilla JS. No new dependencies.
 
@@ -201,7 +201,7 @@ add:
 ```css
 .toc { display:none; }
 @media (min-width:1280px) {
-  .toc { display:block; position:fixed; left:1.25rem; top:50%; transform:translateY(-50%); }
+  .toc { display:block; position:fixed; right:1.25rem; top:50%; transform:translateY(-50%); }
 }
 .toc-label { color:var(--muted); font-family:var(--font-mono); font-size:.6875rem; letter-spacing:2px; text-transform:uppercase; opacity:.75; margin-bottom:.875rem; }
 .toc ul { display:flex; flex-direction:column; gap:.625rem; }
@@ -225,7 +225,7 @@ Expected: `1` (build passes; the class is in the markup and the stylesheet compi
 - [ ] **Step 3: Visual spot-check**
 
 Run: `hugo server --port 1414` in the background, open `http://localhost:1414/`.
-Expected: at a window 1280px or wider, a small mono-font rail sits at the left edge, vertically centered, reading "ON THIS PAGE" over Experience, Projects, Skills, Education with hollow dots. Below 1280px it disappears. Clicking "Skills" scrolls smoothly to the skills section with its heading fully visible. Stop the server after checking.
+Expected: at a window 1280px or wider, a small mono-font rail sits at the right edge, vertically centered, reading "ON THIS PAGE" over Experience, Projects, Skills, Education with hollow dots. Below 1280px it disappears. Clicking "Skills" scrolls smoothly to the skills section with its heading fully visible. Stop the server after checking.
 
 - [ ] **Step 4: Commit**
 

@@ -37,7 +37,7 @@ The featured projects section in `featured-projects.html` gains `id="projects"`.
 
 ### 3. Placement and appearance
 
-A `<nav>` with an `aria-label`, fixed at the left viewport edge and vertically centered, hidden below 1280px via a plain CSS media query. Labels are `text-xs` JetBrains Mono in the muted color, echoing the `.eyebrow` style, each with a small dot marker. The active entry uses the accent color and a filled dot. At a 1280px viewport the free margin is about 100px, so labels hug the edge; if that proves cramped visually, the breakpoint moves up to 1440px (a one-line change, decided during implementation review in the browser).
+A `<nav>` with an `aria-label`, fixed at the right viewport edge and vertically centered (the conventional side for a table of contents, per design review), hidden below 1280px via a plain CSS media query. Labels are `text-xs` JetBrains Mono in the muted color, echoing the `.eyebrow` style, each with a small dot marker. The active entry uses the accent color and a filled dot. At a 1280px viewport the free margin is about 100px, so labels hug the edge; if that proves cramped visually, the breakpoint moves up to 1440px (a one-line change, decided during implementation review in the browser).
 
 ### 4. Scroll-spy behavior
 

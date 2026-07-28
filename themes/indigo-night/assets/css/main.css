@@ -71,7 +71,7 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
 @media (max-width:1023px) { .journey { display:none; } }
 .toc { display:none; }
 @media (min-width:1280px) {
-  .toc { display:block; position:fixed; left:1.25rem; top:50%; transform:translateY(-50%); }
+  .toc { display:block; position:fixed; right:1.25rem; top:50%; transform:translateY(-50%); }
 }
 .toc-label { color:var(--muted); font-family:var(--font-mono); font-size:.6875rem; letter-spacing:2px; text-transform:uppercase; opacity:.75; margin-bottom:.875rem; }
 .toc ul { display:flex; flex-direction:column; gap:.625rem; }
