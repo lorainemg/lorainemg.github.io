@@ -1,9 +1,9 @@
 {{ define "main" }}
 <main class="wrap">
   <header class="pt-14">
-    <p class="font-mono text-[12.5px] mb-4" style="color:var(--muted)"><a href="{{ site.Home.RelPermalink }}" style="color:var(--accent)" class="no-underline">~</a> / <a href="{{ .Parent.RelPermalink }}" style="color:var(--accent)" class="no-underline">{{ lower .Parent.Title }}</a> / {{ .File.ContentBaseName }}</p>
+    <p class="font-mono text-base mb-4" style="color:var(--muted)"><a href="{{ site.Home.RelPermalink }}" style="color:var(--accent)" class="no-underline">~</a> / <a href="{{ .Parent.RelPermalink }}" style="color:var(--accent)" class="no-underline">{{ lower .Parent.Title }}</a> / {{ .File.ContentBaseName }}</p>
     <h1 class="font-display font-bold text-5xl tracking-tight" style="color:var(--heading)">{{ .Title }}</h1>
-    {{ with .Description }}<p class="mt-4 text-lg leading-relaxed max-w-[62ch]" style="color:var(--muted)">{{ . }}</p>{{ end }}
+    {{ with .Description }}<p class="mt-4 text-lg leading-relaxed" style="color:var(--muted)">{{ . }}</p>{{ end }}
     {{ with .Params.github }}
     <div class="mt-5">
       <a class="btn-solid inline-flex items-center gap-2" href="{{ . }}">

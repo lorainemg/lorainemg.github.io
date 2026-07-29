@@ -8,8 +8,14 @@
     <div class="flex-1 h-px" style="background:var(--border)"></div>
   </div>
   <div class="ml-1.5" style="border-left:2px solid var(--border)">
-    {{ range (sort $current "Params.startDate" "desc") }}{{ partial "experience-item.html" . }}{{ end }}
-    {{ range (sort $past "Params.endDate" "desc") }}{{ partial "experience-item.html" . }}{{ end }}
+    {{ $ordered := (sort $current "Params.startDate" "desc") | append (sort $past "Params.endDate" "desc") }}
+    {{ $companies := slice }}{{ $seen := dict }}
+    {{ range $ordered }}{{ if not (index $seen .Params.company) }}{{ $seen = merge $seen (dict .Params.company true) }}{{ $companies = $companies | append .Params.company }}{{ end }}{{ end }}
+    {{ range $c := $companies }}
+      {{ $mine := where $ordered "Params.company" $c }}
+      {{ if eq (len $mine) 1 }}{{ partial "experience-item.html" (index $mine 0) }}
+      {{ else }}{{ partial "experience-group.html" (dict "roles" $mine "company" $c) }}{{ end }}
+    {{ end }}
   </div>
 </section>
 {{ end }}

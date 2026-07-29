@@ -10,6 +10,12 @@ other = "Skills"
 [nav_education]
 other = "Education"
 
+[toc_label]
+other = "On this page"
+
+[toc_intro]
+other = "Intro"
+
 [download_cv]
 other = "Download CV"
 
@@ -59,6 +65,24 @@ other = "yrs"
 [mo]
 one = "mo"
 other = "mos"
+
+[career_timeline]
+other = "Career timeline"
+
+[hero_now]
+other = "Now"
+
+[hero_at]
+other = "at"
+
+[hero_based]
+other = "Based in"
+
+[hero_focus]
+other = "Focus"
+
+[hero_open_to]
+other = "Open to"
 
 [email]
 other = "Email"

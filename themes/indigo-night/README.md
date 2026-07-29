@@ -63,7 +63,7 @@ rendered, and their nav links disappear with them.
                                       # title, lowercased. The theme appends
                                       # an accent-colored dot.
       tagline = "..."                 # home <title> suffix and meta description
-      location = "City, Country"      # shown next to the hero eyebrow
+      location = "City, Country"      # the hero "Based in" fact
       cvPath = "files/cv.pdf"         # relative to static/; enables the
                                       # Download CV button
       accentColor = "#e11d48"         # any CSS color; replaces the indigo
@@ -71,9 +71,18 @@ rendered, and their nav links disappear with them.
                                       # are derived automatically in OKLCH.
 
       [params.hero]
-        eyebrow = "// your tagline"
-        headline = "I build the *whole* product."   # *word* gets a gradient
+        name = "Jane Doe"             # the h1; defaults to title.
+                                      # *word* gets a gradient
+        role = "What you do, in one line."
         intro = "Markdown **allowed** here."
+
+        # Optional facts, each rendered as a labelled row. Omit any you
+        # don't want. `now` is read from the current role in
+        # content/experience/ (the one with endDate: null) and only needs
+        # setting here to override that, or if you have no experience pages.
+        now = "Staff Engineer at Acme"
+        focus = "Backend systems, data pipelines, infrastructure"
+        openTo = "Backend and platform roles"
 
       [params.social]
         github = "https://github.com/you"
