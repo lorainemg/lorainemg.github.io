@@ -70,16 +70,15 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
 @keyframes journey-pulse { 0%,100% { opacity:.9; transform:scale(1); } 50% { opacity:.2; transform:scale(1.4); } }
 @media (max-width:1023px) { .journey { display:none; } }
 .toc { display:none; }
-@media (min-width:1280px) {
-  .toc { display:block; position:fixed; right:1.25rem; top:50%; transform:translateY(-50%); }
+@media (min-width:1440px) {
+  /* Centered in the gutter between the 1016px visible content edge (50% + 508px) and the viewport edge */
+  .toc { display:block; position:fixed; left:calc(75% + 254px); top:8.5rem; transform:translateX(-50%); width:max-content; }
 }
-.toc-label { color:var(--muted); font-family:var(--font-mono); font-size:.6875rem; letter-spacing:2px; text-transform:uppercase; opacity:.75; margin-bottom:.875rem; }
-.toc ul { display:flex; flex-direction:column; gap:.625rem; }
-.toc a { display:flex; align-items:center; gap:.5rem; color:var(--muted); font-family:var(--font-mono); font-size:.75rem; text-decoration:none; transition:color .2s ease; }
-.toc a::before { content:''; flex:none; width:7px; height:7px; border-radius:9999px; border:1.5px solid currentColor; transition:background .2s ease; }
-.toc a:hover { color:var(--accent); }
-.toc a[aria-current] { color:var(--accent); }
-.toc a[aria-current]::before { background:currentColor; }
+.toc-label { color:var(--muted); font-family:var(--font-mono); font-size:.6875rem; letter-spacing:2px; text-transform:uppercase; opacity:.75; margin-bottom:.75rem; padding-left:calc(1rem + 1px); }
+.toc ul { border-left:1px solid var(--border); }
+.toc a { display:block; padding:.3125rem 0 .3125rem 1rem; margin-left:-1px; border-left:2px solid transparent; color:var(--muted); font-size:.8125rem; text-decoration:none; transition:color .2s ease, border-color .2s ease; }
+.toc a:hover { color:var(--text); }
+.toc a[aria-current] { color:var(--accent); border-left-color:var(--accent); }
 
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior:smooth; } }
 main section[id] { scroll-margin-top:2rem; }
