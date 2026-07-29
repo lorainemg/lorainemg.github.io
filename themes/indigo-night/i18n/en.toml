@@ -66,6 +66,21 @@ other = "yrs"
 one = "mo"
 other = "mos"
 
+[hero_now]
+other = "Now"
+
+[hero_at]
+other = "at"
+
+[hero_based]
+other = "Based in"
+
+[hero_focus]
+other = "Focus"
+
+[hero_open_to]
+other = "Open to"
+
 [email]
 other = "Email"
 

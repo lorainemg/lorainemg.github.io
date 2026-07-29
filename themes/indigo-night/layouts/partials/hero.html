@@ -1,15 +1,57 @@
 {{ $hero := site.Params.hero | default dict }}
 {{ $social := site.Params.social | default dict }}
+{{- /* The current role drives the "now" fact, so it tracks the experience
+       content instead of being restated by hand in the config. */ -}}
+{{ $ongoing := sort (where (where site.RegularPages "Section" "experience") "Params.endDate" nil) "Params.startDate" "desc" }}
+{{ $current := cond (gt (len $ongoing) 0) (index $ongoing 0) false }}
 <section id="intro" class="wrap relative pt-20 pb-16 overflow-hidden reveal">
   {{ partial "journey.html" . }}
-  {{ if or $hero.eyebrow site.Params.location }}
-  <p class="eyebrow mb-4">{{ $hero.eyebrow }}{{ with site.Params.location }}{{ if $hero.eyebrow }} · {{ end }}{{ . }}{{ end }}</p>
-  {{ end }}
   <h1 class="font-display font-bold text-5xl md:text-7xl tracking-tight leading-[1.02] max-w-[12ch]" style="color:var(--heading)">
-    {{ replaceRE `\*([^*]+)\*` `<span class="grad-text">$1</span>` ($hero.headline | default site.Title) | safeHTML }}
+    {{ replaceRE `\*([^*]+)\*` `<span class="grad-text">$1</span>` ($hero.name | default $hero.headline | default site.Title) | safeHTML }}
   </h1>
+  {{ with $hero.role }}
+  <p class="hero-role mt-5 max-w-[42ch]">{{ . | markdownify }}</p>
+  {{ end }}
+
+  {{ $now := $hero.now }}
+  {{ if and (not $now) $current }}{{ $now = true }}{{ end }}
+  {{ if or $now site.Params.location $hero.focus $hero.openTo }}
+  <dl class="hero-facts mt-8">
+    {{ if $now }}
+    <div class="hero-fact">
+      <dt>{{ T "hero_now" }}</dt>
+      <dd>
+        {{- if ne $now true }}{{ $now | markdownify }}
+        {{- else }}{{ $current.Title }} {{ T "hero_at" }}
+          {{- with $current.Params.website }} <a href="{{ . }}">{{ $current.Params.company }}</a>
+          {{- else }} {{ $current.Params.company }}{{ end }}
+        {{- end }}
+      </dd>
+    </div>
+    {{ end }}
+    {{ with site.Params.location }}
+    <div class="hero-fact">
+      <dt>{{ T "hero_based" }}</dt>
+      <dd>{{ . }}</dd>
+    </div>
+    {{ end }}
+    {{ with $hero.focus }}
+    <div class="hero-fact">
+      <dt>{{ T "hero_focus" }}</dt>
+      <dd>{{ . | markdownify }}</dd>
+    </div>
+    {{ end }}
+    {{ with $hero.openTo }}
+    <div class="hero-fact">
+      <dt>{{ T "hero_open_to" }}</dt>
+      <dd>{{ . | markdownify }}</dd>
+    </div>
+    {{ end }}
+  </dl>
+  {{ end }}
+
   {{ with $hero.intro }}
-  <p class="hero-intro mt-5 text-lg leading-relaxed max-w-[52ch]" style="color:var(--muted)">
+  <p class="hero-intro mt-8 leading-relaxed max-w-[58ch]" style="color:var(--muted)">
     {{ . | markdownify }}
   </p>
   {{ end }}

@@ -11,9 +11,13 @@ theme = "indigo-night"
   location = "Tampa, Florida"
   cvPath = ""   # set to e.g. "files/loraine-monteagudo-cv.pdf" when the PDF exists
   [params.hero]
-    eyebrow = "// fullstack engineer · machine learning"
-    headline = "I build the *whole* product."   # *word* gets the gradient
-    intro = "I'm **Loraine Monteagudo**, a fullstack engineer with a machine learning background. I take products from idea to production: the interface, the API, the data pipelines, and the infrastructure they run on."
+    name = "Loraine *Monteagudo*"
+    role = "Fullstack engineer with a machine learning background."
+    focus = "Interfaces, APIs, data pipelines, infrastructure"
+    openTo = "Fullstack and platform roles"
+    # `now` is read from the current role in content/experience/ (the one with
+    # endDate: null). Set it here only to override that.
+    intro = "I like owning a product all the way down. I've built a simulator that models a year of an air conditioner's energy use against real weather, a platform that dims a city's street lights on schedule, and a pipeline that watches flight prices across six regions to find the ones worth telling people about. Each of those I built myself: the pipelines that clean and reshape the data, the API, the interface, and the model in the middle. Machine learning research is where I started, and it still does real work in what I build."
   [params.social]
     github = "https://github.com/lorainemg"
     linkedin = "https://www.linkedin.com/in/lorainemg"
