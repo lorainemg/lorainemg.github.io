@@ -1,4 +1,5 @@
-{{ $roles := sort (where site.RegularPages "Section" "experience") "Params.startDate" "desc" }}
+{{ $all := where site.RegularPages "Section" "experience" }}
+{{ $roles := (sort (where $all "Params.endDate" nil) "Params.startDate" "desc") | append (sort (where $all "Params.endDate" "ne" nil) "Params.endDate" "desc") }}
 {{ $companies := slice }}{{ $seen := dict }}
 {{ range $roles }}{{ if not (index $seen .Params.company) }}{{ $seen = merge $seen (dict .Params.company true) }}{{ $companies = $companies | append . }}{{ end }}{{ end }}
 {{ $n := len $companies }}
@@ -16,7 +17,7 @@
     <text x="{{ add $x 18 }}" y="{{ add $y 4 }}" class="journey-hash">{{ substr (md5 $p.Params.company) 0 7 }}</text>
     <text x="{{ add $x 90 }}" y="{{ add $y 4 }}" class="journey-label">{{ $p.Params.company }}</text>
     {{ $mine := where $roles "Params.company" $p.Params.company }}
-    {{ $earliest := index $mine (sub (len $mine) 1) }}
+    {{ $earliest := index (sort $mine "Params.startDate" "asc") 0 }}
     {{ $start := printf "%.4s" (printf "%v" $earliest.Params.startDate) }}
     {{ $end := T "now" }}{{ with $p.Params.endDate }}{{ $end = printf "%.4s" (printf "%v" .) }}{{ end }}
     <text x="{{ add $x 18 }}" y="{{ add $y 20 }}" class="journey-date">{{ $start }}&#8202;&#8211;&#8202;{{ $end }}</text>
