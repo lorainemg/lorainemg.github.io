@@ -87,6 +87,17 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
 .journey-head { animation:journey-pulse 2.4s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
 @keyframes journey-pulse { 0%,100% { opacity:.9; transform:scale(1); } 50% { opacity:.2; transform:scale(1.4); } }
 @media (max-width:1023px) { .journey { display:none; } }
+/* Only the nodes take clicks; the rest of the graph's box stays transparent
+   to the pointer so it can't swallow clicks on the hero beneath it. */
+.journey { pointer-events:none; }
+.journey-node { pointer-events:auto; cursor:pointer; }
+.journey-hit { fill:transparent; pointer-events:all; }
+.journey-node .journey-label, .journey-node .journey-hash, .journey-node .journey-date { transition:fill .2s ease, opacity .2s ease; }
+.journey-node:hover .journey-label, .journey-node:focus-visible .journey-label { fill:var(--heading); }
+.journey-node:hover .journey-hash, .journey-node:focus-visible .journey-hash,
+.journey-node:hover .journey-date, .journey-node:focus-visible .journey-date { opacity:1; }
+.journey-node:focus { outline:none; }
+.journey-node:focus-visible .journey-hit { stroke:var(--accent); stroke-width:1; }
 .toc { display:none; }
 @media (min-width:1440px) {
   /* Centered in the gutter between the 1016px visible content edge (50% + 508px) and the viewport edge */
@@ -99,7 +110,7 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
 .toc a[aria-current] { color:var(--accent); border-left-color:var(--accent); }
 
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior:smooth; } }
-main section[id] { scroll-margin-top:2rem; }
+main section[id], main article[id] { scroll-margin-top:2rem; }
 
 .prose-indigo { color:var(--text); line-height:1.85; }
 .prose-indigo h2 { font-family:var(--font-display); color:var(--heading); font-size:1.375rem; margin:2rem 0 .875rem; }

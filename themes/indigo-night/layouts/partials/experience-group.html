@@ -3,7 +3,7 @@
 {{ $latest := index .roles 0 }}
 {{ $earliest := index (sort .roles "Params.startDate" "asc") 0 }}
 {{ $dur := partial "exp-duration.html" (dict "start" $earliest.Params.startDate "end" $latest.Params.endDate) }}
-<article class="relative pb-9 pl-8 tl-item">
+<article id="exp-{{ anchorize .company }}" class="relative pb-9 pl-8 tl-item">
   <h3 class="text-lg font-semibold" style="color:var(--heading)">
     {{ with $latest.Params.website }}<a href="{{ . }}" class="no-underline" style="color:inherit">{{ $.company }}</a>{{ else }}{{ .company }}{{ end }}
     <span class="font-normal font-mono text-xs" style="color:var(--muted)">· {{ $dur }}</span>

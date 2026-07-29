@@ -2,7 +2,7 @@
 {{ $role := . }}{{ $nested := false }}
 {{ if reflect.IsMap . }}{{ $role = .role }}{{ $nested = .nested }}{{ end }}
 {{ $dur := partial "exp-duration.html" (dict "start" $role.Params.startDate "end" $role.Params.endDate) }}
-<article class="relative {{ if $nested }}pb-8 pl-7 tl-sub last:pb-1{{ else }}pb-9 pl-8 tl-item{{ end }}">
+<article {{ if not $nested }}id="exp-{{ anchorize $role.Params.company }}" {{ end }}class="relative {{ if $nested }}pb-8 pl-7 tl-sub last:pb-1{{ else }}pb-9 pl-8 tl-item{{ end }}">
   <div class="font-mono text-xs" style="color:var(--accent)">
     {{ $role.Params.startDate | time.Format "2006.01" }} - {{ with $role.Params.endDate }}{{ . | time.Format "2006.01" }}{{ else }}{{ T "present" }}{{ end }}<span style="color:var(--muted)"> · {{ $dur }}</span>
   </div>

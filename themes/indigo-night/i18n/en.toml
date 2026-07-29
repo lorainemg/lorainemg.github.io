@@ -66,6 +66,9 @@ other = "yrs"
 one = "mo"
 other = "mos"
 
+[career_timeline]
+other = "Career timeline"
+
 [hero_now]
 other = "Now"
 
