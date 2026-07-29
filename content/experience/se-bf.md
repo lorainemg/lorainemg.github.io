@@ -5,7 +5,7 @@ location: Boca Raton, Florida
 workMode: Remote
 employmentType: Full-time
 website: https://bluefrontierac.com/
-startDate: 2025-03-01
+startDate: 2025-05-01
 endDate: null
 skills: [Python, TypeScript, HTML & CSS, Linux, Docker, Git, FastAPI, SQLAlchemy, PostgreSQL, TimescaleDB, Redis, Svelte, TailwindCSS, WebSockets, Azure, Terraform, Prefect, Grafana, OpenTelemetry, GitHub Actions, Pandas, NumPy, scikit-learn, Pytest]
 softSkills: [Ownership & initiative, Cross-team collaboration]
