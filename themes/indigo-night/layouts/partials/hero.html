@@ -1,6 +1,6 @@
 {{ $hero := site.Params.hero | default dict }}
 {{ $social := site.Params.social | default dict }}
-<section class="wrap relative pt-20 pb-16 overflow-hidden reveal">
+<section id="intro" class="wrap relative pt-20 pb-16 overflow-hidden reveal">
   {{ partial "journey.html" . }}
   {{ if or $hero.eyebrow site.Params.location }}
   <p class="eyebrow mb-4">{{ $hero.eyebrow }}{{ with site.Params.location }}{{ if $hero.eyebrow }} · {{ end }}{{ . }}{{ end }}</p>
