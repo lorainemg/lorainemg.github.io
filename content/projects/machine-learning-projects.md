@@ -5,7 +5,7 @@ category: teaching
 skills: [Python, Jupyter, Machine Learning, Scikit-Learn, Teaching]
 github: https://github.com/lorainemg/cp-ml
 featured: false
-weight: 12
+weight: 13
 ---
 
 The practical side of a university machine learning course: hands-on

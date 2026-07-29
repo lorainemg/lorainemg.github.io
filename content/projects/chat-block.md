@@ -5,7 +5,7 @@ category: misc
 skills: [Python, Blockchain, Cryptographic Hashing, Data Structures]
 github: https://github.com/lorainemg/chat-block
 featured: false
-weight: 27
+weight: 28
 ---
 
 A small experiment around one question: what if no one could quietly edit a

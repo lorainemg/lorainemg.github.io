@@ -4,7 +4,7 @@ description: "A search engine built from scratch on the vector space model: docu
 category: ml-nlp
 skills: [Python, Information Retrieval, TF-IDF, Clustering, NLP, Streamlit, Web Crawling]
 github: https://github.com/lorainemg/information-retrieval-system
-weight: 19
+weight: 20
 ---
 
 A search engine built from first principles: given a query, it finds and

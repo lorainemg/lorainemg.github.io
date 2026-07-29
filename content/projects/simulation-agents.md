@@ -5,7 +5,7 @@ category: ai
 skills: [Python, Intelligent Agents, Simulation, AI]
 github: https://github.com/lorainemg/agent
 featured: false
-weight: 28
+weight: 29
 ---
 
 An agent-based simulation with a mischievous premise: a robot must keep a

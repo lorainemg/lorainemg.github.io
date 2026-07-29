@@ -5,7 +5,7 @@ category: tooling
 skills: [C++, CMake, Boost, WebSockets, REST APIs, Docker, Portainer, Home Assistant, GoogleTest]
 github: https://github.com/lorainemg/ha-portainer-integration
 featured: false
-weight: 10
+weight: 11
 ---
 
 A homelab grows containers faster than anyone updates dashboards. This

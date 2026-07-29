@@ -5,7 +5,7 @@ category: data-science
 skills: [Python, Streamlit, Pandas, Plotly, CoinGecko API, Twitter API, Sentiment Analysis, Jenkins]
 github: https://github.com/lorainemg/crypto-forecasting
 featured: true
-weight: 4
+weight: 5
 ---
 
 An interactive dashboard that joins the two signals crypto traders watch

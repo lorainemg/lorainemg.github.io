@@ -7,7 +7,7 @@
 - group: Data & Machine Learning
   items: [Pandas, NumPy, Scikit-Learn, TensorFlow, Keras, spaCy, MLFlow, NLP, AutoML, Streamlit, Google BigQuery]
 - group: DevOps & Cloud
-  items: [Docker, GitHub Actions, Terraform, Azure, Linux, Git, Aspire, Grafana, OpenTelemetry, Cloudflare]
+  items: [Docker, GitHub Actions, GitOps, Terraform, Azure, Linux, Git, Aspire, Portainer, Caddy, Prometheus, Grafana, OpenTelemetry, Cloudflare, Home Assistant]
 - group: Protocols & Messaging
   items: [REST APIs, WebSockets, MQTT, gRPC, MCP]
 - group: Testing & Monitoring

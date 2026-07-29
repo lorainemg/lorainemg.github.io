@@ -5,7 +5,7 @@ category: web
 skills: [C#, .NET, Blazor, MudBlazor, .NET MAUI, ASP.NET Core, Entity Framework, PostgreSQL, Aspire]
 github: https://github.com/Sussman-Club/group-split
 featured: false
-weight: 8
+weight: 9
 ---
 
 An expense-splitting app for groups (who paid what, who owes whom), built

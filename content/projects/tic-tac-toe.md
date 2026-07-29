@@ -5,7 +5,7 @@ category: web
 skills: [React, JavaScript, Python, FastHTML, HTMX]
 github: https://github.com/lorainemg/tic-tac-toe
 featured: false
-weight: 24
+weight: 25
 ---
 
 Tic-tac-toe is small enough to build in an afternoon but complete enough

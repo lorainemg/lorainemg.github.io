@@ -5,7 +5,7 @@ category: compilers
 skills: [Python, Flask, Compilers, Type Systems, Semantic Analysis, Interpreters]
 github: https://github.com/lorainemg/type-inference
 featured: false
-weight: 25
+weight: 26
 ---
 
 COOL (Classroom Object-Oriented Language) is a small object-oriented

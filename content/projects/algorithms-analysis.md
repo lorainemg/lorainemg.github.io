@@ -4,7 +4,7 @@ description: "Four optimization problems, each solved several ways (dynamic prog
 category: algorithms
 skills: [Python, Dynamic Programming, Backtracking, Divide and Conquer, Greedy Algorithms, Complexity Analysis]
 github: https://github.com/lorainemg/daa
-weight: 17
+weight: 18
 ---
 
 Four optimization problems solved from scratch, where the goal was not just

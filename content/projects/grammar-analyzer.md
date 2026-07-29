@@ -5,7 +5,7 @@ category: compilers
 skills: [Python, Flask, Compiler Theory, Parsing, Formal Languages, Automata]
 github: https://github.com/lorainemg/grammar-analyzer
 featured: false
-weight: 26
+weight: 27
 ---
 
 Anyone who has taken a compilers course knows the tedious part: computing

@@ -5,7 +5,7 @@ category: tooling
 skills: [Python, Flet, Pydantic, MCP, Desktop GUI]
 github: https://github.com/lorainemg/claude-sync
 featured: false
-weight: 9
+weight: 10
 ---
 
 Claude Desktop and Claude Code each keep their own list of MCP (Model

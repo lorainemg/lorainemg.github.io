@@ -5,7 +5,7 @@ category: systems
 skills: [Logisim, Computer Architecture, Digital Logic, MIPS Assembly, Python]
 github: https://github.com/lorainemg/s-mipsv2-processor
 featured: false
-weight: 14
+weight: 15
 ---
 
 A complete 32-bit processor implementing the S-MIPSv2 instruction set

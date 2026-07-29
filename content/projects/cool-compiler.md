@@ -5,7 +5,7 @@ category: compilers
 skills: [Python, PLY, Compilers, Type Systems, MIPS Assembly, Visitor Pattern]
 github: https://github.com/lorainemg/cool-compiler-2020
 featured: true
-weight: 6
+weight: 7
 ---
 
 A full compiler for COOL (Classroom Object-Oriented Language), a small

@@ -8,7 +8,7 @@ links:
   - name: Live demo
     url: https://next-financial-dashboard-two.vercel.app
 featured: false
-weight: 20
+weight: 21
 ---
 
 An invoicing dashboard for a fictional company, built by working through

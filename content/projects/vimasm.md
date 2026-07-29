@@ -5,7 +5,7 @@ category: systems
 skills: [x86 Assembly, NASM, Low-Level Programming, Operating Systems, Bare Metal]
 github: https://github.com/lorainemg/vimasm
 featured: true
-weight: 7
+weight: 8
 ---
 
 A recreation of Vim's core editing experience with nothing beneath it:
