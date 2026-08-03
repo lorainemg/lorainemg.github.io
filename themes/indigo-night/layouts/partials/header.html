@@ -1,18 +1,33 @@
 {{ $logo := site.Params.logoText | default (lower (index (split site.Title " ") 0)) }}
 {{ $cur := . }}
-{{/* The nav wraps to its own row only when it genuinely runs out of room; the toggle is
-     pinned right (with pr-20 reserving its column) so it never wraps away from the logo. */}}
-<header class="wrap relative flex flex-wrap items-center gap-x-4 gap-y-3 py-6 pr-20 sm:gap-x-6">
+{{/* The TOC lives in the header so its small-screen panel can anchor under the button that
+     opens it; above 1440px the same element becomes the fixed sidebar. */}}
+{{ $hasToc := and .IsHome (ge (len (partial "toc-entries.html" .)) 2) }}
+{{/* The nav wraps to its own row only when it genuinely runs out of room; the buttons are
+     pinned right (with the pr reserve holding their column) so they never wrap away. */}}
+<div class="site-header">
+<header class="mx-auto max-w-[1440px] px-8 relative flex flex-wrap items-center gap-x-4 gap-y-3 py-3 sm:py-4 sm:gap-x-6 {{ if $hasToc }}pr-31 min-[1440px]:pr-20{{ else }}pr-20{{ end }}">
   <a href="{{ site.Home.RelPermalink }}" class="mr-auto font-display font-bold text-lg no-underline" style="color:var(--heading)">{{ $logo }}<span style="color:var(--accent)">.</span></a>
   <nav class="flex flex-wrap items-center justify-end gap-x-4 gap-y-2 text-sm sm:gap-x-6">
     {{ with site.GetPage "/projects" }}{{ if .RegularPages }}<a class="nav-link no-underline font-medium"{{ if or (eq $cur.RelPermalink .RelPermalink) (.IsAncestor $cur) }} aria-current="page"{{ end }} href="{{ .RelPermalink }}">{{ T "nav_projects" }}</a>{{ end }}{{ end }}
     {{ with site.GetPage "/skills" }}{{ if .Pages }}<a class="nav-link no-underline font-medium"{{ if or (eq $cur.RelPermalink .RelPermalink) (.IsAncestor $cur) }} aria-current="page"{{ end }} href="{{ .RelPermalink }}">{{ T "nav_skills" }}</a>{{ end }}{{ end }}
     {{ with site.Params.cvPath }}<a class="btn-solid" href="{{ . | relURL }}" download>{{ T "download_cv" }}</a>{{ end }}
   </nav>
-  <button id="theme-toggle" aria-label="{{ T "toggle_theme" }}" aria-pressed="false" class="chip theme-toggle cursor-pointer absolute right-8 inset-y-0 my-auto">
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
-      <path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor"/>
-    </svg>
-  </button>
+  <div class="absolute right-8 inset-y-0 my-auto flex items-center gap-2 h-9 sm:h-8">
+    {{ if $hasToc }}
+    <button id="toc-toggle" aria-label="{{ T "toc_label" }}" aria-controls="toc" aria-expanded="false" class="chip icon-btn toc-toggle cursor-pointer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+    {{ end }}
+    <button id="theme-toggle" aria-label="{{ T "toggle_theme" }}" aria-pressed="false" class="chip icon-btn cursor-pointer">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor"/>
+      </svg>
+    </button>
+  </div>
+  {{ if $hasToc }}{{ partial "toc.html" . }}{{ end }}
 </header>
+</div>

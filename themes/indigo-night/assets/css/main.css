@@ -51,10 +51,10 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
   .chip { background:var(--surface); border:1px solid var(--border); color:var(--text); @apply text-sm font-medium px-4 py-2 rounded-lg no-underline; }
   .chip:hover { border-color:var(--accent); color:var(--accent); }
   /* Square icon button, kept compact next to the nav. */
-  .theme-toggle { @apply relative grid place-items-center shrink-0 p-0 w-9 h-9 sm:w-8 sm:h-8; }
+  .icon-btn { @apply relative grid place-items-center shrink-0 p-0 w-9 h-9 sm:w-8 sm:h-8; }
   /* The visual box is 36px; the hit area is padded back out to the 44px touch minimum. */
-  .theme-toggle::after { content:''; position:absolute; inset:-4px; }
-  .theme-toggle svg { @apply w-[18px] h-[18px] sm:w-4 sm:h-4; }
+  .icon-btn::after { content:''; position:absolute; inset:-4px; }
+  .icon-btn svg { @apply w-[18px] h-[18px] sm:w-4 sm:h-4; }
   .tag { color:var(--accent); background:var(--bg); border:1px solid var(--border); @apply text-xs px-2.5 py-0.5 rounded-full no-underline; }
   .tag-soft { color:var(--violet); background:var(--bg); border:1px solid var(--border); @apply text-xs px-2.5 py-0.5 rounded-full; }
   .eyebrow { color:var(--accent); font-family:var(--font-mono); @apply text-xs tracking-[2px] uppercase; }
@@ -112,15 +112,35 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
 @media (min-width:1440px) {
   /* Centered in the gutter between the 1016px visible content edge (50% + 508px) and the viewport edge */
   .toc { display:block; position:fixed; left:calc(75% + 254px); top:8.5rem; transform:translateX(-50%); width:max-content; }
+  /* The gutter sidebar is visible, so the button that opens the panel is redundant. */
+  .toc-toggle { display:none; }
 }
+/* Below the gutter breakpoint the same nav becomes a panel hanging off the header button. */
+@media (max-width:1439px) {
+  .toc[data-open] { display:block; position:absolute; top:100%; right:2rem; z-index:40; width:max-content; min-width:11rem;
+    background:var(--surface); border:1px solid var(--border); border-radius:.75rem; padding:.875rem 1rem .75rem;
+    box-shadow:0 16px 40px rgb(0 0 0 / 0.28); }
+  .toc[data-open] a { font-size:.875rem; padding:.4375rem 0 .4375rem 1rem; }
+}
+.toc-toggle[aria-expanded="true"] { border-color:var(--accent); color:var(--accent); }
 .toc-label { color:var(--muted); font-family:var(--font-mono); font-size:.6875rem; letter-spacing:2px; text-transform:uppercase; opacity:.75; margin-bottom:.75rem; padding-left:calc(1rem + 1px); }
 .toc ul { border-left:1px solid var(--border); }
 .toc a { display:block; padding:.3125rem 0 .3125rem 1rem; margin-left:-1px; border-left:2px solid transparent; color:var(--muted); font-size:.8125rem; text-decoration:none; transition:color .2s ease, border-color .2s ease; }
 .toc a:hover { color:var(--text); }
 .toc a[aria-current] { color:var(--accent); border-left-color:var(--accent); }
 
+/* Kept on screen so the TOC button and nav stay reachable mid-page. The background is opaque
+   rather than a backdrop-filter: a filtered ancestor would become the containing block for the
+   position:fixed sidebar TOC nested inside it. */
+.site-header { position:sticky; top:0; z-index:50; background:var(--bg); }
+/* Content dissolves into the bar instead of meeting a hard edge. A backdrop-filter would read
+   better still, but a filtered ancestor would capture the position:fixed sidebar TOC nested here. */
+.site-header::after { content:''; position:absolute; left:0; right:0; top:100%; height:2rem;
+  background:linear-gradient(to bottom, var(--bg), transparent); pointer-events:none; }
+
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior:smooth; } }
-main section[id], main article[id] { scroll-margin-top:2rem; }
+/* Clears the sticky header so anchored sections don't land underneath it. */
+main section[id], main article[id] { scroll-margin-top:5.5rem; }
 
 .prose-indigo { color:var(--text); line-height:1.85; }
 .prose-indigo h2 { font-family:var(--font-display); color:var(--heading); font-size:1.375rem; margin:2rem 0 .875rem; }

@@ -1,0 +1,9 @@
+{{- /* Returns the on-this-page entries. Shared so the header can tell whether a TOC exists
+       without duplicating the section checks. */ -}}
+{{- $entries := slice (dict "id" "intro" "label" (T "toc_intro")) -}}
+{{- if where site.RegularPages "Section" "experience" }}{{ $entries = $entries | append (dict "id" "experience" "label" (T "nav_experience")) }}{{ end -}}
+{{- if where (where site.RegularPages "Section" "projects") "Params.featured" true }}{{ $entries = $entries | append (dict "id" "projects" "label" (T "nav_projects")) }}{{ end -}}
+{{- if hugo.Data.skills }}{{ $entries = $entries | append (dict "id" "skills" "label" (T "nav_skills")) }}{{ end -}}
+{{- $edu := hugo.Data.education | default dict -}}
+{{- if or $edu.degree $edu.certifications $edu.publications hugo.Data.achievements }}{{ $entries = $entries | append (dict "id" "education" "label" (T "nav_education")) }}{{ end -}}
+{{- return $entries -}}

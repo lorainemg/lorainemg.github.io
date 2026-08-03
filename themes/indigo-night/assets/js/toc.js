@@ -11,3 +11,22 @@ if (toc && "IntersectionObserver" in window) {
   }, { rootMargin: "-25% 0px -65% 0px" });
   byId.forEach((a, id) => { const s = document.getElementById(id); if (s) io.observe(s); });
 }
+
+// Below the gutter breakpoint the TOC is a panel opened from the header button.
+const tocToggle = document.getElementById("toc-toggle");
+if (toc && tocToggle) {
+  const setOpen = open => {
+    toc.toggleAttribute("data-open", open);
+    tocToggle.setAttribute("aria-expanded", open);
+  };
+  tocToggle.addEventListener("click", () => setOpen(tocToggle.getAttribute("aria-expanded") !== "true"));
+  toc.addEventListener("click", e => { if (e.target.closest("a")) setOpen(false); });
+  document.addEventListener("click", e => {
+    if (!toc.contains(e.target) && !tocToggle.contains(e.target)) setOpen(false);
+  });
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape" || tocToggle.getAttribute("aria-expanded") !== "true") return;
+    setOpen(false);
+    tocToggle.focus();
+  });
+}
