@@ -1,5 +1,5 @@
-{{ $edu := site.Data.education | default dict }}
-{{ $ach := site.Data.achievements | default slice }}
+{{ $edu := hugo.Data.education | default dict }}
+{{ $ach := hugo.Data.achievements | default slice }}
 {{ if or $edu.degree $edu.certifications $edu.publications $ach }}
 <section id="education" class="wrap pt-16 reveal">
   <div class="flex items-baseline gap-4 mb-8">
