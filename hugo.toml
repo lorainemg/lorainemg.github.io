@@ -1,7 +1,6 @@
 baseURL = "https://lorainemg.github.io/"
 locale = "en-us"
 title = "Loraine Monteagudo"
-theme = "indigo-night"
 
 [taxonomies]
   skill = "skills"
@@ -36,6 +35,8 @@ theme = "indigo-night"
   term = ["html"]
 
 [module]
+  [[module.imports]]
+    path = "github.com/lorainemg/hugo-theme-indigo-night"
   [[module.mounts]]
     source = 'assets'
     target = 'assets'
