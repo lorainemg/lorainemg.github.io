@@ -3,7 +3,7 @@
 Personal portfolio site for Loraine Monteagudo — software engineer specializing in
 fullstack development and machine learning.
 
-Built with [Hugo](https://gohugo.io/) and a custom theme (**indigo-night**): dark
+Built with [Hugo](https://gohugo.io/) and a custom theme ([**indigo-night**](https://github.com/lorainemg/hugo-theme-indigo-night)): dark
 editor-theme palette with a light mode toggle, Space Grotesk + Inter + JetBrains Mono
 typography, TailwindCSS, and a skills taxonomy that cross-links roles and projects.
 
@@ -105,6 +105,19 @@ publishes it to GitHub Pages. No manual steps.
 content/           projects + experience (Markdown)
 data/              education, achievements, skills groups, stats (YAML)
 static/files/      CV PDF (create when ready)
-themes/indigo-night/  the custom theme (templates, CSS, JS)
+go.mod / go.sum       pins the theme module (hugo-theme-indigo-night)
 docs/superpowers/  design spec, implementation plan, content inventory
 ```
+
+### Working on the theme
+
+The theme lives in [hugo-theme-indigo-night](https://github.com/lorainemg/hugo-theme-indigo-night),
+pinned here via `go.mod`. To iterate on it locally, clone it next to this
+repo and run:
+
+```sh
+HUGO_MODULE_REPLACEMENTS="github.com/lorainemg/hugo-theme-indigo-night -> ../hugo-theme-indigo-night" hugo server
+```
+
+When it's ready, commit and tag in the theme repo, then update the pin
+here: `hugo mod get github.com/lorainemg/hugo-theme-indigo-night@<tag>`.

@@ -1,9 +1,0 @@
-{{ $start := time .start }}
-{{ $end := now }}{{ with .end }}{{ $end = time . }}{{ end }}
-{{ $months := add (mul (sub $end.Year $start.Year) 12) (sub (int ($end.Format "1")) (int ($start.Format "1"))) }}
-{{ $yrs := div $months 12 }}{{ $mos := mod $months 12 }}
-{{ $dur := "" }}
-{{ if gt $yrs 0 }}{{ $dur = printf "%d %s" $yrs (T "yr" $yrs) }}{{ end }}
-{{ if gt $mos 0 }}{{ $dur = trim (printf "%s %d %s" $dur $mos (T "mo" $mos)) " " }}{{ end }}
-{{ if eq $dur "" }}{{ $dur = printf "1 %s" (T "mo" 1) }}{{ end }}
-{{ return $dur }}
