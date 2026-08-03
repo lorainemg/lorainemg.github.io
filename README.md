@@ -16,8 +16,16 @@ hugo server        # live-reload preview at http://localhost:1313
 hugo --gc          # production build into public/
 ```
 
-Requires Hugo ≥ 0.148 (installed at `~/.local/bin/hugo`) and Node 20 (used
-automatically by Hugo for TailwindCSS; run `npm install` once after a fresh clone).
+Prerequisites:
+
+- **Hugo ≥ 0.158** — the theme's templates use `site.Language.Locale` and
+  `hugo.Data.*`. The *extended* build is not required (there is no SCSS and no image
+  processing), though it does no harm; CI installs 0.164.
+- **Node ≥ 22.13** — Hugo runs the TailwindCSS CLI under Node's permission model,
+  which needs 22.13+. CI uses Node 24. Run `npm install` once after a fresh clone.
+- **Go** — required for local builds. The theme is a Hugo module, and Hugo shells out
+  to the `go` binary to fetch it; without it the build fails with
+  `binary with name "go" not found in PATH`.
 
 ## Where to edit content
 
@@ -75,8 +83,10 @@ List of `title`, `event`, optional `url`.
 
 ### Stats bar (hero) — `data/stats.yaml`
 
-The "4+ years / 20+ projects / …" numbers. Plain value + label pairs — update these
-when your experience data changes, they are not computed.
+The "6+ years / 20+ projects / …" numbers. Each entry is a `label` plus either a
+literal `value` or a `count`: `count: projects` auto-computes from the pages in
+`content/projects/` and `count: skills` from the items in `data/skills.yaml`. Only
+the literal `value` entries need updating by hand.
 
 ### Skills chips (home) — `data/skills.yaml`
 
@@ -116,8 +126,12 @@ pinned here via `go.mod`. To iterate on it locally, clone it next to this
 repo and run:
 
 ```sh
-HUGO_MODULE_REPLACEMENTS="github.com/lorainemg/hugo-theme-indigo-night -> ../hugo-theme-indigo-night" hugo server
+HUGO_MODULE_REPLACEMENTS="github.com/lorainemg/hugo-theme-indigo-night -> ../../hugo-theme-indigo-night" hugo server
 ```
+
+(The replacement path is relative to `themesDir` — i.e. `./themes/` — not to the repo
+root, so a sibling checkout is two levels up. With a single `../` Hugo fails with
+`module "../hugo-theme-indigo-night" not found`.)
 
 When it's ready, commit and tag in the theme repo, then update the pin
 here: `hugo mod get github.com/lorainemg/hugo-theme-indigo-night@<tag>`.
