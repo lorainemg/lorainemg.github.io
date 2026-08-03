@@ -13,8 +13,8 @@ softSkills: [Ownership & initiative, Cross-team collaboration, Technical documen
 
 - Built a smart street-lighting platform on **LoRaWAN**, from the lamp controllers in the field to the operator dashboard: lamps report energy use and status, and operators control one lamp or a whole group.
 - Wrote the backend in **Python** (**FastAPI**, **SQLAlchemy**, **MySQL**): nested installation trees, schedules and calendars with exceptions, work orders, alarms, energy reports, and a full audit log.
-- Wrote the device layer: a binary protocol small enough for low-power radio messages, plus multi-step device jobs that retry and recover.
-- Added over-the-air firmware updates: the system splits each image, sends it to a whole group of lamps at once, tracks progress, and recovers from failures.
+- Wrote the device layer: a **binary protocol** small enough for low-power radio messages, plus multi-step device jobs that retry and recover.
+- Added **over-the-air firmware updates**: the system splits each image, sends it to a whole group of lamps at once, tracks progress, and recovers from failures.
 - Built a scheduler that cuts energy use: lamps switch at the true sunrise and sunset for their GPS location and dim through the night on set programs. If a lamp does not confirm, the system raises an alarm.
 - Built the **Vue 3** dashboard: a map of every device, live status over **WebSockets**, manual control of lamps and groups, schedule and calendar editors, user management, alarms, and work orders.
 - Designed permissions that follow the installation tree: a grant on a group flows down to everything under it, so a city gives each contractor just what it needs.

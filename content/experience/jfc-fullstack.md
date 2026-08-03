@@ -13,7 +13,7 @@ softSkills: [Ownership & initiative, Cross-team collaboration]
 
 - Built a flight-deal tracker as a set of small services: scrapers collect prices from many sources, a cleaning stage makes them consistent, and a detector compares each price with its past average to find real deals.
 - Built the data pipeline: it collects daily across 6 regions, cleans messy source data (airports, currencies, languages), and keeps every version.
-- Trained a machine learning model that judges whether a flight is a good deal and improved it with the team's own calls as feedback. It took over much of the work people did by eye.
+- Trained a **machine learning** model that judges whether a flight is a good deal and improved it with the team's own calls as feedback. It took over much of the work people did by eye.
 - Built the data sets and training flow behind it: automatic extraction, human feedback added to the training data, and experiment tracking so we could repeat any model version.
 - Built an internal **Svelte** dashboard where the team sorts, checks, and publishes deals as they arrive, with a live view of what the system finds.
 - Built a **Slack** bot that became the team's main tool: commands, forms, and daily updates that cut status checks by about half.

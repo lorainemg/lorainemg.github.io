@@ -17,6 +17,6 @@ softSkills: [Ownership & initiative, Cross-team collaboration]
 - Set up **Sentry** on every service and tied it to deploys, so we found the cause of a fault much faster.
 - Automated database chores people used to do by hand: backups, cleanup of old data, and a weekly refresh of the test environment from production.
 - Automated **Google Sheets** reports and regional deal alerts, which cut hand work and caught high-value deals in time.
-- Looked after the machine learning model in production, fixing bad predictions and guarding against false positives.
+- Looked after the **machine learning** model in production, fixing bad predictions and guarding against false positives.
 - Added new data sources, including sites behind anti-bot protections.
 - Worked closely with the deals team so the tools fit the way they work each day.

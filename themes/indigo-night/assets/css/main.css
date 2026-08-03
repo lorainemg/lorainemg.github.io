@@ -66,6 +66,9 @@ body { background:var(--bg); color:var(--text); font-family:var(--font-body); }
     border-radius:9999px; background:var(--bg); border:2px solid var(--accent); }
   .card-link::after { content:''; position:absolute; inset:0; }
   .hero-intro strong { color:var(--text); font-weight:600; }
+  /* Emphasis sits halfway between the muted body and full text colour, in both themes.
+     The plain colour first is the fallback for browsers without color-mix. */
+  .exp-body strong { color:var(--text); color:color-mix(in srgb, var(--text) 50%, var(--muted)); font-weight:600; }
   .exp-body li { position:relative; padding-left:1.25rem; }
   .exp-body li + li { margin-top:.4rem; }
   .exp-body li::before { content:'▸'; position:absolute; left:0; color:var(--accent); font-size:.75em; top:.35em; }
