@@ -12,4 +12,4 @@ softSkills: [Mentoring]
 ---
 
 - Helped teach Logic over 3 semesters, leading practice sessions and guiding students through hard concepts.
-- Helped prepare and grade exams, keeping grading fair and feedback timely and useful.
+- Helped set and grade exams, keeping marks fair and feedback quick and useful.

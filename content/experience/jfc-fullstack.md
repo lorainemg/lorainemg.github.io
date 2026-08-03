@@ -11,13 +11,13 @@ skills: [Python, TypeScript, HTML & CSS, Linux, Docker, FastAPI, SQLAlchemy, Pan
 softSkills: [Ownership & initiative, Cross-team collaboration]
 ---
 
-- Designed and built a flight-deal tracking platform as a set of independent services: scheduled scrapers collect flight prices from many sources, a processing layer cleans and standardizes the data, and a detection engine compares prices against historical averages to spot real deals.
-- Built the data pipeline behind it: daily collection across 6 regions, cleanup of messy source data (airports, currencies, languages), and storage in well-structured databases with full version history.
-- Trained a machine learning model that predicts whether a flight is a good deal, improved over time with feedback from the team's decisions. This automated much of what had been manual judgment.
-- Built the datasets and training workflow behind the model: automated data extraction, human feedback folded into the training data, and experiment tracking so the team could compare and reproduce every model version.
-- Created an internal dashboard (**Svelte**) where the team reviews, triages, and publishes deals in real time, with live views of what the system is finding.
-- Built a **Slack** bot that became the team's main working interface: interactive commands, forms, and daily updates that cut manual status checks by about half.
-- Automated delivery with **GitHub Actions**: tests run on every change, deploys take one click, and over 20 scheduled jobs keep tracking, reporting, and maintenance running on their own.
-- Packaged every service with **Docker** so it runs the same in development and production, reducing "works on my machine" issues.
-- Connected the platform to the rest of the business: the email marketing system, **Google Sheets** and **BigQuery** for analytics and reporting, and AI-assisted copy editing for deal write-ups.
-- Set up testing from the start, building a suite that made it safe to change and ship code fast.
+- Built a flight-deal tracker as a set of small services: scrapers collect prices from many sources, a cleaning stage makes them consistent, and a detector compares each price with its past average to find real deals.
+- Built the data pipeline: it collects daily across 6 regions, cleans messy source data (airports, currencies, languages), and keeps every version.
+- Trained a machine learning model that judges whether a flight is a good deal and improved it with the team's own calls as feedback. It took over much of the work people did by eye.
+- Built the data sets and training flow behind it: automatic extraction, human feedback added to the training data, and experiment tracking so we could repeat any model version.
+- Built an internal **Svelte** dashboard where the team sorts, checks, and publishes deals as they arrive, with a live view of what the system finds.
+- Built a **Slack** bot that became the team's main tool: commands, forms, and daily updates that cut status checks by about half.
+- Automated delivery with **GitHub Actions**: tests on every change, one-click deploys, and over 20 scheduled jobs that run tracking, reports, and upkeep on their own.
+- Packaged every service with **Docker** so it runs the same in development and production.
+- Linked the platform to the rest of the business: the email marketing system, **Google Sheets** and **BigQuery** for reports, and AI help with editing deal write-ups.
+- Set up tests from the start, which made it safe to change and ship code fast.

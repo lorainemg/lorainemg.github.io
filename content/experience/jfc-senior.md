@@ -11,12 +11,12 @@ skills: [Python, TypeScript, Docker, FastAPI, SQLAlchemy, Sentry, Google Sheets,
 softSkills: [Ownership & initiative, Cross-team collaboration]
 ---
 
-- Built a **compiler** for the shorthand deal writers use to describe routes, prices, and conditions: a formal grammar parses it into a typed syntax tree that yields both structured data and the customer-facing deal page text, replacing a manual, error-prone formatting step.
-- Led a redesign of how the platform stores and shares its core geographic data (airports, routes, regions), replacing copies spread across two databases with one fast central store. This simplified the codebase and removed a whole class of data-consistency bugs.
-- Sped up deal scanning by tuning database queries, batching writes, adding caching, and running work in parallel, so the system handles growing data volumes without slowing down.
-- Set up error monitoring across all services with **Sentry**, tied into deploys so every release is tracked. This cut the time from "something broke" to "we know where and why."
-- Automated database housekeeping: scheduled backups, cleanup of old data, and weekly refreshes of the test environment with production data, all work once done by hand.
-- Automated reporting into **Google Sheets** and scheduled alerts for flight deals by region, cutting manual work and flagging high-value deals on time.
-- Maintained the machine learning model in production, fixing prediction issues and adding safeguards against false positives.
-- Added new data sources, including working around anti-bot protections on outside sites.
-- Worked closely with the deals team so the tools matched how they worked day to day.
+- Built a **compiler** for the shorthand deal writers use for routes, prices, and conditions: a grammar turns it into a typed tree that gives both the stored data and the text readers see, in place of a manual step that often went wrong.
+- Led the redesign of the platform's core map data (airports, routes, regions). One fast central store replaced copies in two databases, which simplified the code and ended a whole set of data bugs.
+- Sped up deal scanning by tuning queries, batching writes, caching, and running work in parallel, so more data did not slow it down.
+- Set up **Sentry** on every service and tied it to deploys, so we found the cause of a fault much faster.
+- Automated database chores people used to do by hand: backups, cleanup of old data, and a weekly refresh of the test environment from production.
+- Automated **Google Sheets** reports and regional deal alerts, which cut hand work and caught high-value deals in time.
+- Looked after the machine learning model in production, fixing bad predictions and guarding against false positives.
+- Added new data sources, including sites behind anti-bot protections.
+- Worked closely with the deals team so the tools fit the way they work each day.
