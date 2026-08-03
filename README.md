@@ -133,5 +133,27 @@ HUGO_MODULE_REPLACEMENTS="github.com/lorainemg/hugo-theme-indigo-night -> ../../
 root, so a sibling checkout is two levels up. With a single `../` Hugo fails with
 `module "../hugo-theme-indigo-night" not found`.)
 
-When it's ready, commit and tag in the theme repo, then update the pin
-here: `hugo mod get github.com/lorainemg/hugo-theme-indigo-night@<tag>`.
+### Shipping a theme change
+
+Pushing to the theme repo does **not** change this site. `go.mod` pins an
+exact version, and the build — here and in CI — fetches only that version.
+Three steps, in order:
+
+```sh
+# 1. in the theme repo: commit, then tag the release
+git commit -am "what you changed" && git push
+git tag v1.2.0 && git push origin v1.2.0
+
+# 2. here: move the pin
+hugo mod get github.com/lorainemg/hugo-theme-indigo-night@v1.2.0
+
+# 3. here: commit the bump — this is the step that deploys
+git commit -am "bump theme to v1.2.0" && git push
+```
+
+The tag matters. Without one, `hugo mod get ...@main` records a pseudo-version
+(`v1.1.1-0.20260803203000-abc123def456`) — it works, but the pin stops telling
+you which release is live.
+
+The pin is the point: an unfinished theme commit can't reach production until
+you deliberately bump it here.
