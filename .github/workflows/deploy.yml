@@ -14,7 +14,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.148.2
+      # Matches local development. site.Language.Locale needs 0.158 or newer.
+      HUGO_VERSION: 0.164.0
     steps:
       - uses: actions/checkout@v4
       - name: Install Hugo
