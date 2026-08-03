@@ -20,7 +20,7 @@
 - Host is Arch Linux; hugo 0.164.0+extended and `gh` are installed; `go` and `git-filter-repo` are NOT yet installed.
 - Scratch space: `/tmp/claude-1000/-mnt-Data-work-portfolio/f46a1937-9238-4203-8bf5-e259acd1a3ed/scratchpad` (referred to as `$SCRATCH` below; expand it literally in every command).
 - Site-repo work happens on branch `theme-module`; merge to `main` only in the final task (pushing `main` deploys the live site).
-- Commit messages end with: `Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>`
+- Commit messages: a single line, casual tone, no Co-Authored-By or other trailers.
 
 ---
 
@@ -548,9 +548,7 @@ hugo server --themesDir ../..
 ```bash
 cd /mnt/Data/work/hugo-theme-indigo-night
 git add README.md
-git commit -m "Rewrite the README for standalone publication
-
-Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
+git commit -m "rewrite the readme for publishing"
 ```
 
 ---
@@ -693,12 +691,7 @@ here: `hugo mod get github.com/lorainemg/hugo-theme-indigo-night@<tag>`.
 ```bash
 cd /mnt/Data/work/portfolio
 git add -A
-git commit -m "Consume indigo-night as a Hugo module
-
-The theme now lives at github.com/lorainemg/hugo-theme-indigo-night,
-pinned to v1.0.0 via go.mod.
-
-Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
+git commit -m "pull the theme in as a hugo module instead of vendoring it"
 ```
 
 ---
@@ -757,9 +750,7 @@ Expected: `valid yaml`.
 ```bash
 cd /mnt/Data/work/portfolio
 git add .github/workflows/deploy.yml
-git commit -m "Install Go in CI so Hugo can fetch the theme module
-
-Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
+git commit -m "install go in ci so hugo can fetch the theme module"
 ```
 
 ---
@@ -785,9 +776,7 @@ Expected: build exit 0, empty diff.
 
 ```bash
 git switch main
-git merge --no-ff theme-module -m "Split the theme into its own repository
-
-Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
+git merge --no-ff theme-module -m "split the theme into its own repo"
 git push origin main
 ```
 
